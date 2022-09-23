@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/DLICT-WEBSITE/static/css/main.4f89f58d.css",
-    "main.js": "/DLICT-WEBSITE/static/js/main.ec185722.js",
+    "main.js": "/DLICT-WEBSITE/static/js/main.4225a4bb.js",
     "static/media/color-sharp.png": "/DLICT-WEBSITE/static/media/color-sharp.bea361cfef80fefc2d1e.png",
     "static/media/color-sharp2.png": "/DLICT-WEBSITE/static/media/color-sharp2.c87586c6c2f549cb4aa6.png",
     "static/media/banner-bg.png": "/DLICT-WEBSITE/static/media/banner-bg.cc1273af450504afe755.png",
@@ -15,6 +15,7 @@
     "static/media/project-img2.png": "/DLICT-WEBSITE/static/media/project-img2.2e52097c417f9f1134b0.png",
     "static/media/project-img3.png": "/DLICT-WEBSITE/static/media/project-img3.675b30d2f975a1bc1d09.png",
     "static/media/meter1.png": "/DLICT-WEBSITE/static/media/meter1.de093faa0ce39b0544de.png",
+    "static/media/contact-img.svg": "/DLICT-WEBSITE/static/media/contact-img.87eac2b29352fa01abb2f9510ef6ac7e.svg",
     "static/media/meter3.png": "/DLICT-WEBSITE/static/media/meter3.214df31bc119ce50304e.png",
     "static/media/revicons.eot": "/DLICT-WEBSITE/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/DLICT-WEBSITE/static/media/revicons.57fd05d4ae650374c8de.ttf",
@@ -25,10 +26,10 @@
     "static/media/nav-icon1.svg": "/DLICT-WEBSITE/static/media/nav-icon1.721d5414c26365f117e71d46b6641cb2.svg",
     "static/media/nav-icon2.svg": "/DLICT-WEBSITE/static/media/nav-icon2.178f497aa17b70c42df2a1a8c926ed01.svg",
     "main.4f89f58d.css.map": "/DLICT-WEBSITE/static/css/main.4f89f58d.css.map",
-    "main.ec185722.js.map": "/DLICT-WEBSITE/static/js/main.ec185722.js.map"
+    "main.4225a4bb.js.map": "/DLICT-WEBSITE/static/js/main.4225a4bb.js.map"
   },
   "entrypoints": [
     "static/css/main.4f89f58d.css",
-    "static/js/main.ec185722.js"
+    "static/js/main.4225a4bb.js"
   ]
 }
