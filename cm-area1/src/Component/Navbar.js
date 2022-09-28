@@ -83,6 +83,15 @@ export const NavBar = () => {
                         >
                             CONTRACT US
                         </Nav.Link>
+
+                        <Nav.Link
+                            as={Link}
+                            to="/profile"
+                            className={activeLink === "CONTRACT US" ? "active navbar-link" : "navbar-link"}
+                            onClick={() => onUpdateActiveLink("CONTRACT US")}
+                        >
+                           FQA
+                        </Nav.Link>
                     </Nav>
                     <span className="navbar-text">
                         <div className="social-icon">
