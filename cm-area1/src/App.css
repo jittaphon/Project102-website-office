@@ -246,7 +246,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner {
     margin-top: 0;
     padding: 260px 0 100px 0;
-    background-image: url("./assets/img/banner-bg.png");
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(50, 50, 190, 1) 0%, rgba(0, 212, 255, 1) 100%);
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -263,7 +263,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     display: inline-block;
 }
 .banner .taglineProfile {
-    
     font-weight: 700;
     letter-spacing: 0.8px;
     padding: 8px 10px;
@@ -283,7 +282,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     display: block;
 }
 .banner p {
-    color: #b8b8b8;
+    color: #fffafa;
     font-size: 18px;
     letter-spacing: 0.8px;
     line-height: 1.5em;
@@ -327,11 +326,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Skills Css ************/
 .skill {
+    color: black;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(50, 50, 190, 1) 0%, rgba(0, 212, 255, 1) 100%);
     padding: 0 0 50px 0;
     position: relative;
 }
 .skill-bx {
-    background: #151515;
+    background-image: url(../src/assets/img/background2.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
     border-radius: 64px;
     text-align: center;
     padding: 60px 50px;
@@ -342,7 +345,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     font-weight: 700;
 }
 .skill p {
-    color: #b8b8b8;
+    color: #201f1f;
     font-size: 18px;
     letter-spacing: 0.8px;
     line-height: 1.5em;
@@ -414,7 +417,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     position: absolute;
     width: 0;
     height: 100%;
-    background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(50, 50, 190, 1) 0%, rgba(0, 212, 255, 1) 100%);
     top: 0;
     left: 0;
     z-index: -1;
@@ -493,14 +496,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Projects Css ************/
 .contact {
-    background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(50, 50, 190, 1) 0%, rgba(0, 212, 255, 1) 100%);
     padding: 60px 0 200px 0;
 }
 .contact img {
     width: 92%;
 }
 .contact img {
-  width: 92%;
+    width: 92%;
 }
 .contact h2 {
     font-size: 45px;
@@ -578,10 +581,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     width: 92%;
 }
 .profiledetail img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 15%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
 }
 .profiledetail h2 {
     font-size: 45px;
@@ -655,7 +658,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ Footer Css ************/
 .footer {
     padding: 0 0 50px 0;
-    background-image: url("./assets/img/footer-bg.png");
+    background-image: url("./assets/img/footer-bg.svg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;

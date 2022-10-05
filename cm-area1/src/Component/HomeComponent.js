@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img2.png";
-import { ArrowRightCircle } from "react-bootstrap-icons";
+
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 
@@ -70,15 +70,12 @@ export const HomeBanner = () => {
                                             <span className="wrap">{text}</span>
                                         </span>
                                     </h1>
-                                    <p>
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                                        unknown printer took a galley of type and scrambled it to make a type specimen
-                                        book.
+                                    <p >
+                                    ศึกษา วิเคราะห์ ดำเนินการ และส่งเสริมการจัดการศึกษาทางไกล พัฒนาระบบข้อมูลสารสนเทศเพื่อการบริหารและการจัดการศึกษา
+                                    ดำเนินงานสารสนเทศเพื่อการบริหารและการจัดการศึกษา ดำเนินการวิเคราะห์ และปฏิบัติงานระบบคอมพิวเตอร์และเทคโนโลยีสารสนเทศและการสื่อสาร
+                                    ส่งเสริม สนับสนุน และดำเนินงานบริการเทคโนโลยีสารสนเทศ 
                                     </p>
-                                    <button onClick={() => console.log("connect")}>
-                                        Let’s Connect <ArrowRightCircle size={25} />
-                                    </button>
+                                    
                                 </div>
                             )}
                         </TrackVisibility>
