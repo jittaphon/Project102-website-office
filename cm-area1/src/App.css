@@ -158,6 +158,7 @@ span.navbar-text {
     z-index: 1;
     transition: 0.3s ease-in-out;
 }
+
 .social-icon a:hover img {
     filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%)
         contrast(86%);
@@ -574,7 +575,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 /**************************************/
 .profiledetail {
-    background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(50, 50, 190, 1) 0%, rgba(0, 212, 255, 1) 100%);
     padding: 60px 0 200px 0;
 }
 .profiledetail img {
@@ -729,7 +730,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .footer p {
     font-weight: 400;
     font-size: 14px;
-    color: #b8b8b8;
+    color: #000000;
     letter-spacing: 0.5px;
     margin-top: 20px;
+    text-decoration: none;
 }
+.footer p a{
+    text-decoration: none;
+}
+

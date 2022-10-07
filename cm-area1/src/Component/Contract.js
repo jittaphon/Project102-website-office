@@ -1,4 +1,4 @@
-import { useState , useEffect} from "react";
+import { useState} from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
 import 'animate.css';
@@ -7,14 +7,14 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from "sweetalert2";
 
-export const Contact = () => {
+export const Contact = (className) => {
   const form = useRef();
   const first_name = useRef();
   const last_name = useRef();
   const email = useRef();
   const phone = useRef();
   const message = useRef();
-  const [buttonText, setButtonText] = useState('Send');
+  const [buttonText, setButtoText] = useState('Send');
 
   const SendEmail = async (e) => {
 

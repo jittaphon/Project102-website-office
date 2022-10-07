@@ -5,12 +5,12 @@ import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 
-export const DataPage = () => {
+export const ContractPage = (className) => {
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
     const [text, setText] = useState("");
     const [delta, setDelta] = useState(300 - Math.random() * 100);
-    const [index, setIndex] = useState(1);
+    const [index,setIndex] = useState(1);
     const toRotate = ["DMC ", "CONFERENCE", "EMIS B-OBEC M-OBEC"];
     const period = 2000;
 
@@ -58,7 +58,7 @@ export const DataPage = () => {
                             {({ isVisible }) => (
                                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                                     <span className="tagline">
-                                      Data_Page
+                                    Contract_page
                                     </span>
                                     <h1>
                                         {`"Welcome to DLICT "`}{" "}

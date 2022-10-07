@@ -1,9 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
-import React, { useRef } from "react";
-import headerImg from "../assets/img/person2.jpg";
-export const ProfileDetail = () => {
+import React from "react";
+export const ProfileDetail = (className) => {
     return (
         <section className="profiledetail" id="connect">
             <Container>
@@ -11,7 +10,7 @@ export const ProfileDetail = () => {
                     <TrackVisibility>
                         {({ isVisible }) => (
                             <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                                <img src={headerImg} alt="Header Img"  />
+                            
                             </div>
                         )}
                     </TrackVisibility>

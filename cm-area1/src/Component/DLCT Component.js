@@ -5,7 +5,7 @@ import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 
-export const DataPage = () => {
+export const DLICT_page = (className) => {
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
     const [text, setText] = useState("");
@@ -58,7 +58,7 @@ export const DataPage = () => {
                             {({ isVisible }) => (
                                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                                     <span className="tagline">
-                                      Data_Page
+                                     DLICT_Page
                                     </span>
                                     <h1>
                                         {`"Welcome to DLICT "`}{" "}

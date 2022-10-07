@@ -3,7 +3,6 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../assets/img/logo.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
 import navIcon3 from "../assets/img/nav-icon3.svg";
-import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
 
 export const NavBar = () => {
@@ -68,7 +67,7 @@ export const NavBar = () => {
 
                         <Nav.Link
                             as={Link}
-                            to="/profile"
+                            to="/DLICT"
                             className={activeLink === "DLICT" ? "active navbar-link" : "navbar-link"}
                             onClick={() => onUpdateActiveLink("DLICT")}
                         >
@@ -77,7 +76,7 @@ export const NavBar = () => {
 
                         <Nav.Link
                             as={Link}
-                            to="/profile"
+                            to="/Contractus"
                             className={activeLink === "CONTRACT US" ? "active navbar-link" : "navbar-link"}
                             onClick={() => onUpdateActiveLink("CONTRACT US")}
                         >
@@ -86,23 +85,23 @@ export const NavBar = () => {
 
                         <Nav.Link
                             as={Link}
-                            to="/profile"
-                            className={activeLink === "CONTRACT US" ? "active navbar-link" : "navbar-link"}
-                            onClick={() => onUpdateActiveLink("CONTRACT US")}
+                            to="/FAQ"
+                            className={activeLink === "FAQ" ? "active navbar-link" : "navbar-link"}
+                            onClick={() => onUpdateActiveLink("FAQ")}
                         >
-                           FQA
+                           FAQ
                         </Nav.Link>
                     </Nav>
                     <span className="navbar-text">
                         <div className="social-icon">
-                            <a href="https://www.facebook.com/profile.php?id=100057185991041" target="_blank">
+                            <a href="https://www.facebook.com/profile.php?id=100057185991041" target="_blank" rel="noreferrer">
                                 <img src={navIcon2} alt="" />
                             </a>
-                            <a href="https://www.instagram.com/cmarea_1/" target="_blank">
+                            <a href="https://www.instagram.com/cmarea_1/" target="_blank" rel="noreferrer">
                                 <img src={navIcon3} alt="" />
                             </a>
                         </div>
-                        <a href="https://www.youtube.com/channel/UCtjlRN5V2b4tDvRCdzacp_w" target="_blank">
+                        <a href="https://www.youtube.com/channel/UCtjlRN5V2b4tDvRCdzacp_w" target="_blank" rel="noreferrer">
                             <button className="vvd">
                                 <span>Let’s Channel</span>
                             </button>

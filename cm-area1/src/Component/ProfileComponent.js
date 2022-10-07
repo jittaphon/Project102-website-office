@@ -1,10 +1,8 @@
-import { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { ArrowRightCircle } from "react-bootstrap-icons";
+import { Container, Col } from "react-bootstrap";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 
-export const ProfilePage = () => {
+export const ProfilePage = (className) => {
 
 
     return (
