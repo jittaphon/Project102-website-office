@@ -2,6 +2,7 @@
   "name": "cm-area1",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://backend-dlict-dashboard.herokuapp.com",
   "dependencies": {
     "@emailjs/browser": "^3.7.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
@@ -12,6 +13,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "animate.css": "^4.1.1",
+    "axios": "^1.1.2",
     "bootstrap": "^5.2.1",
     "gh-pages": "^4.0.0",
     "helmet": "^6.0.0",
