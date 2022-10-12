@@ -522,7 +522,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .contact {
     background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(50, 50, 190, 1) 0%, rgba(0, 212, 255, 1) 100%);
     padding: 60px 0 200px 0;
+    
 }
+
 .contact img {
     width: 92%;
 }
@@ -595,6 +597,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .contact form button:hover::before {
     width: 100%;
+}
+.contact a{
+    text-decoration:none;  
+    color: inherit;
 }
 /**************************************/
 .profiledetail {

@@ -13,7 +13,7 @@ export const ProfilePage = (className) => {
 
     useEffect(() => {
         function get() {
-            axios.get("/admin/getData").then((res) => {
+            axios.get("https://backend-dlict-dashboard.herokuapp.com/admin/getData").then((res) => {
                 setData(res.data);
             });
         }
