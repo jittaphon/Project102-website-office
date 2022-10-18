@@ -62,6 +62,10 @@ a:hover {
     text-decoration: none;
 }
 
+.accordion a {
+    text-decoration: none;
+}
+
 img {
     width: 100%;
     height: auto;
@@ -116,6 +120,7 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
     font-size: 18px;
     opacity: 0.75;
 }
+
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
 nav.navbar .navbar-nav a.nav-link.navbar-link.active {
     opacity: 1;
@@ -260,6 +265,27 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     background-size: cover;
     background-repeat: no-repeat;
 }
+.banner-data {
+    margin-top: 0;
+    padding: 200px 0 230px 0;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(50, 50, 190, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/************ banner-DLICT ***********/
+.banner-DLICT {
+    margin-top: 0;
+    padding: 260px 0 100px 0;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(50, 50, 190, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.list-group {
+    text-align: left;
+}
 
 .banner .tagline {
     font-weight: 700;
@@ -281,8 +307,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     margin-bottom: 16px;
     margin-left: 420px;
     display: inline-block;
-
-}.banner .taglineContact {
+}
+.banner .taglineContact {
     font-weight: 700;
     letter-spacing: 0.8px;
     padding: 8px 10px;
@@ -344,7 +370,58 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     border-right: 0.08em solid #666;
 }
 
+
 /************ Skills Css ************/
+.ChoiceBox {
+    color: black;
+    padding: 0 0 50px 0;
+    position: relative;
+}
+.container-contact {
+    background-image: url(../src/assets/img/background2.svg);
+}
+.ChoiceBox-bx {
+    background-image: url(../src/assets/img/background2.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 64px;
+    text-align: center;
+    padding: 50px 50px;
+    margin-top: -60px;
+}
+.ChoiceBox-slider {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+.Button{
+    text-align: left;
+    padding:10px
+}
+.ChoiceBox h2 {
+    font-size: 45px;
+    font-weight: 700;
+}
+.ChoiceBox p {
+    color: #201f1f;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    line-height: 1.5em;
+    margin: 14px 0 75px 0;
+}
+.ChoiceBox-slider .item img {
+    width: 50%;
+    margin: 0 auto 15px auto;
+}
+.background-image-left {
+    top: 28%;
+    position: absolute;
+    bottom: 0;
+    width: 40%;
+    z-index: -4;
+}
+
+/************ ChoiceBox Css ************/
 
 .skill {
     color: black;
@@ -361,7 +438,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     padding: 60px 50px;
     margin-top: -60px;
 }
-.container-contact{
+.container-contact {
     background-image: url(../src/assets/img/background2.svg);
 }
 .skill h2 {
@@ -522,7 +599,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .contact {
     background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(50, 50, 190, 1) 0%, rgba(0, 212, 255, 1) 100%);
     padding: 60px 0 200px 0;
-    
 }
 
 .contact img {
@@ -598,8 +674,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .contact form button:hover::before {
     width: 100%;
 }
-.contact a{
-    text-decoration:none;  
+.contact a {
+    text-decoration: none;
     color: inherit;
 }
 /**************************************/
@@ -764,9 +840,23 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     margin-top: 20px;
     text-decoration: none;
 }
-.footer p a{
+.footer p a {
     text-decoration: none;
 }
-.iframe{
+.iframe {
     border-radius: 25px;
+}
+.imgSize {
+    width: 20%;
+    height: 20%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.imgSize2 {
+    width: 70%;
+    height: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

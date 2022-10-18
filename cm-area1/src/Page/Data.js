@@ -1,9 +1,9 @@
 import React from 'react';
 import { DataPage } from "../Component/DataComponent";
-const About = () => {
+const Data = () => {
     return (
         <DataPage />
     );
 }
 
-export default About;
+export default Data;

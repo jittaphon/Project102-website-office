@@ -1,12 +1,12 @@
 import { Container} from "react-bootstrap";
 import "animate.css";
-import {BackDroup} from "./DataBackDroup";
-export const DataPage = () => {
+import {DataService} from "./DataServiceBackDroup";
+export const Data_Service = () => {
    
     return (
         <section className="banner-data" id="home">
             <Container>
-              <BackDroup/>
+              <DataService/>
             </Container>
         </section>
     );

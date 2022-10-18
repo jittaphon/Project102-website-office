@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import "animate.css";
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInr } from "@fortawesome/free-solid-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -86,20 +85,21 @@ export const Contact = (className) => {
                                 href="https://www.youtube.com/channel/UCtjlRN5V2b4tDvRCdzacp_w"
                                 target="_blank"
                                 rel="noreferrer"
-                            ><FontAwesomeIcon icon={faYoutube} style={{ paddingRight: "10px" }} />
+                            >
+                                <FontAwesomeIcon icon={faYoutube} style={{ paddingRight: "10px" }} />
                                 Youtube
                             </a>
                         </p>
                         <p>
                             <a href="https://twitter.com/nznIcVrk22iUFjZ" target="_blank" rel="noreferrer">
-                            <FontAwesomeIcon icon={faTwitter} style={{ paddingRight: "10px" }} />
+                                <FontAwesomeIcon icon={faTwitter} style={{ paddingRight: "10px" }} />
                                 Twitter
                             </a>
                         </p>
                         <p>
                             {" "}
                             <a href="https://www.instagram.com/cmarea_1/" target="_blank" rel="noreferrer">
-                            <FontAwesomeIcon icon={faInr} style={{ paddingRight: "10px" }} />
+                                <FontAwesomeIcon icon={faInstagram} style={{ paddingRight: "10px" }} />
                                 Instagram
                             </a>
                         </p>
