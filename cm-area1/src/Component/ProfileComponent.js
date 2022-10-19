@@ -2,24 +2,12 @@ import { Container, Col } from "react-bootstrap";
 import  ProfileDetail  from "./Profile";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
-import React from "react";
-import axios from "axios";
-import { useState, useEffect } from "react";
+
 
 
 export const ProfilePage = (className) => {
 
-    const [Data, setData] = useState("");
-
-    useEffect(() => {
-        function get() {
-            axios.get("https://backend-dlict-dashboard.herokuapp.com/admin/getData").then((res) => {
-                setData(res.data);
-            });
-        }
-        get();
-    }, []);
-
+   
     return (
         <section className="banner" id="home">
             <Container>
@@ -33,13 +21,7 @@ export const ProfilePage = (className) => {
                     </TrackVisibility>
                 </Col>
 
-                {Data ? (
-                    Data.map((data) => {
-                      return <ProfileDetail key={data._id} data={data} />;
-                    })
-                ) : (
-                    <div>not data</div>
-                )}
+              
             </Container>
         </section>
     );
