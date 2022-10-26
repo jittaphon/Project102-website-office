@@ -7,7 +7,7 @@ import projImg3 from "../assets/img/project-img3.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
-import Calendar from "./Calender";
+import {AboutBackDrop} from "./About";
 
 
 export const News = (className) => {
@@ -67,7 +67,7 @@ export const News = (className) => {
                                                 <Nav.Link eventKey="second">คู่มือปฏิบัติงาน</Nav.Link>
                                             </Nav.Item>
                                             <Nav.Item>
-                                                <Nav.Link eventKey="third">Ohters</Nav.Link>
+                                                <Nav.Link eventKey="third">เกี่ยวกับ DLICT</Nav.Link>
                                             </Nav.Item>
                                         </Nav>
                                         <Tab.Content
@@ -91,7 +91,7 @@ export const News = (className) => {
                                             </Tab.Pane>
                                             <Tab.Pane eventKey="third">
                                                 <div>
-                                                    <Calendar />
+                                                    <AboutBackDrop />
                                                 </div>
                                             </Tab.Pane>
                                         </Tab.Content>

@@ -67,7 +67,7 @@ a:hover {
 }
 
 img {
-    width: 100%;
+    width: 90%;
     height: auto;
 }
 
@@ -370,7 +370,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     border-right: 0.08em solid #666;
 }
 
-
 /************ Skills Css ************/
 .ChoiceBox {
     color: black;
@@ -394,9 +393,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     margin: 0 auto;
     position: relative;
 }
-.Button{
+.Button {
     text-align: left;
-    padding:10px
+    padding: 10px;
 }
 .ChoiceBox h2 {
     font-size: 45px;
@@ -859,4 +858,26 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+.FAQ_IMG {
+    width: 35%;
+    height: 35%;
+}
+.FAQ_text {
+    text-align: left;
+}
+.css-fix {
+    white-space: pre-wrap;
+}
+.space {
+    padding: 20px;
+}
+.container-About {
+    background-image: url(../src/assets/img/background2.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 64px;
+    text-align: left;
+    padding: 50px 50px;
+    color: black;
 }
