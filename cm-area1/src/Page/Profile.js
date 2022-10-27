@@ -1,10 +1,11 @@
-import React from 'react';
+import React from "react";
 import { ProfilePage } from "../Component/ProfileComponent";
+import { motion } from "framer-motion";
 const Profile = () => {
     return (
-      <div className="">
-       <ProfilePage/>
-       </div>
+        <motion.div className="">
+            <ProfilePage />
+        </motion.div>
     );
 };
 

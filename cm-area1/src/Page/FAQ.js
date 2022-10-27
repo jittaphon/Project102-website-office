@@ -1,9 +1,12 @@
-import React from 'react';
-import {FAQPage} from "../Component/FAQ Component";
+import React from "react";
+import { FAQPage } from "../Component/FAQ Component";
+import { motion } from "framer-motion";
 const FAQ = () => {
     return (
-        <FAQPage />
+        <motion.div>
+            <FAQPage />
+        </motion.div>
     );
-}
+};
 
 export default FAQ;
