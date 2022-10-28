@@ -1,20 +1,24 @@
 {
   "files": {
-    "main.css": "/DLICT-WEBSITE/static/css/main.aeb8b703.css",
-    "main.js": "/DLICT-WEBSITE/static/js/main.cf6a25e1.js",
+    "main.css": "/DLICT-WEBSITE/static/css/main.99f2bffa.css",
+    "main.js": "/DLICT-WEBSITE/static/js/main.50ceb2af.js",
     "static/media/footer-bg.svg": "/DLICT-WEBSITE/static/media/footer-bg.6f618f84d7da2703bf25.svg",
     "static/media/color-sharp.png": "/DLICT-WEBSITE/static/media/color-sharp.bea361cfef80fefc2d1e.png",
     "static/media/color-sharp2.png": "/DLICT-WEBSITE/static/media/color-sharp2.c87586c6c2f549cb4aa6.png",
-    "static/media/header-img.svg": "/DLICT-WEBSITE/static/media/header-img.84bf93eb20488a753440bf83d27db7bb.svg",
     "static/media/CentraNo2-Bold.ttf": "/DLICT-WEBSITE/static/media/CentraNo2-Bold.2faff7f7d3fc92a2fcd9.ttf",
     "static/media/CentraNo2-Medium.ttf": "/DLICT-WEBSITE/static/media/CentraNo2-Medium.f94be5b326d78bb32b95.ttf",
     "static/media/CentraNo2-Book.ttf": "/DLICT-WEBSITE/static/media/CentraNo2-Book.2b143fa4b734a3584043.ttf",
     "static/media/project-img1.png": "/DLICT-WEBSITE/static/media/project-img1.d593db3f12901bc685c2.png",
-    "static/media/header-img2.png": "/DLICT-WEBSITE/static/media/header-img2.8c3ce8948cffcd8288ac.png",
+    "static/media/modern finance business logo.svg": "/DLICT-WEBSITE/static/media/modern finance business logo.046005456b7c2da9c7061837566121b5.svg",
     "static/media/project-img2.png": "/DLICT-WEBSITE/static/media/project-img2.2e52097c417f9f1134b0.png",
+    "static/media/Authentication.jpg": "/DLICT-WEBSITE/static/media/Authentication.090c23f51e9a6f2b4909.jpg",
+    "static/media/logoDLIT.png": "/DLICT-WEBSITE/static/media/logoDLIT.1651bb234ae531aee134.png",
+    "static/media/WIFI2.jpg": "/DLICT-WEBSITE/static/media/WIFI2.42bda3c145b5aa556dba.jpg",
     "static/media/project-img3.png": "/DLICT-WEBSITE/static/media/project-img3.675b30d2f975a1bc1d09.png",
+    "static/media/success.jpg": "/DLICT-WEBSITE/static/media/success.fd673b7a44cfb03c9608.jpg",
     "static/media/meter1.png": "/DLICT-WEBSITE/static/media/meter1.de093faa0ce39b0544de.png",
     "static/media/contact-img.svg": "/DLICT-WEBSITE/static/media/contact-img.87eac2b29352fa01abb2f9510ef6ac7e.svg",
+    "static/media/WIFI.jpg": "/DLICT-WEBSITE/static/media/WIFI.454a3a469a0b91355509.jpg",
     "static/media/meter3.png": "/DLICT-WEBSITE/static/media/meter3.214df31bc119ce50304e.png",
     "static/media/revicons.eot": "/DLICT-WEBSITE/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/DLICT-WEBSITE/static/media/revicons.57fd05d4ae650374c8de.ttf",
@@ -24,11 +28,11 @@
     "static/media/background2.svg": "/DLICT-WEBSITE/static/media/background2.c819b6d26f47a95114ef.svg",
     "index.html": "/DLICT-WEBSITE/index.html",
     "static/media/nav-icon2.svg": "/DLICT-WEBSITE/static/media/nav-icon2.178f497aa17b70c42df2a1a8c926ed01.svg",
-    "main.aeb8b703.css.map": "/DLICT-WEBSITE/static/css/main.aeb8b703.css.map",
-    "main.cf6a25e1.js.map": "/DLICT-WEBSITE/static/js/main.cf6a25e1.js.map"
+    "main.99f2bffa.css.map": "/DLICT-WEBSITE/static/css/main.99f2bffa.css.map",
+    "main.50ceb2af.js.map": "/DLICT-WEBSITE/static/js/main.50ceb2af.js.map"
   },
   "entrypoints": [
-    "static/css/main.aeb8b703.css",
-    "static/js/main.cf6a25e1.js"
+    "static/css/main.99f2bffa.css",
+    "static/js/main.50ceb2af.js"
   ]
 }
