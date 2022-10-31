@@ -14,31 +14,37 @@ export const News = (className) => {
 
     const projects = [
         {
+            id:"1",
             title: "Business Startup",
             description: "Design & Development",
             imgUrl: projImg1,
         },
         {
+            id:"2",
             title: "Business Startup",
             description: "Design & Development",
             imgUrl: projImg2,
         },
         {
+            id:"3",
             title: "Business Startup",
             description: "Design & Development",
             imgUrl: projImg3,
         },
         {
+            id:"4",
             title: "Business Startup",
             description: "Design & Development",
             imgUrl: projImg1,
         },
         {
+            id:"5",
             title: "Business Startup",
             description: "Design & Development",
             imgUrl: projImg2,
         },
         {
+            id:"6",
             title: "Business Startup",
             description: "Design & Development",
             imgUrl: projImg3,

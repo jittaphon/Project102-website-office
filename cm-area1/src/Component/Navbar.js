@@ -40,7 +40,7 @@ export const NavBar = () => {
                     <Nav className="ms-auto">
                         <Nav.Link
                             as={Link}
-                            to="/home"
+                            to="/*"
                             className={activeLink === "home" ? "active navbar-link" : "navbar-link"}
                             onClick={() => onUpdateActiveLink("home")}
                         >
@@ -76,7 +76,7 @@ export const NavBar = () => {
 
                         <Nav.Link
                             as={Link}
-                            to="/Contractus"
+                            to="/Contact-us"
                             className={activeLink === "CONTRACT US" ? "active navbar-link" : "navbar-link"}
                             onClick={() => onUpdateActiveLink("CONTRACT US")}
                         >

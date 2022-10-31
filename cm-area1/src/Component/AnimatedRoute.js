@@ -7,6 +7,7 @@ import DLICT from "../Page/DLICT";
 import FAQ from "../Page/FAQ";
 import Contact from "../Page/Contact";
 import DService from "../Page/DataService";
+import NewsDetail from "../Page/NewsDetail";
 import { AnimatePresence } from "framer-motion";
 
 const AnimatedRoute = () => {
@@ -14,13 +15,14 @@ const AnimatedRoute = () => {
     return (
         <AnimatePresence>
             <Routes location={location} key={location.pathname}>
-                <Route path="/home" element={<Home />} />
+                <Route path="/*" element={<Home />} />
                 <Route path="/information/data" element={<Data />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/DLICT" element={<DLICT />} />
-                <Route path="/Contractus" element={<Contact />} />
+                <Route path="/Contact-us" element={<Contact />} />
                 <Route path="/FAQ" element={<FAQ />} />
                 <Route path="/information/data-service" element={<DService />} />
+                <Route path="/news/news-detail/:id" element={<NewsDetail />} />
             </Routes>
         </AnimatePresence>
     );

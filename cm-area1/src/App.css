@@ -67,7 +67,7 @@ a:hover {
 }
 
 img {
-    width: 90%;
+    width: 100%;
     height: auto;
 }
 
@@ -560,6 +560,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     height: 100%;
 }
 .proj-txtx {
+    color: white !important;
     position: absolute;
     text-align: center;
     top: 65%;
@@ -880,4 +881,38 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     text-align: left;
     padding: 50px 50px;
     color: black;
+}
+.text-link {
+    color: white;
+}
+.banner-NewsDetailBackDrop {
+    color: black;
+    margin-top: 0;
+    padding: 260px 0 100px 0;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(50, 50, 190, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.NewsDetailBackDrop-bx {
+    color: black;
+    background-image: url(../src/assets/img/background2.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    text-align: center;
+    padding: 50px 50px;
+    margin-top: -60px;
+}
+.video-bx {
+    background-image: url(../src/assets/img/background2.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    text-align: center;
+    padding: 60px 50px;
+    margin-top: -60px;
+}
+.react-multi-carousel-item {
+    padding: 0px 10px 0px 10px;
 }
