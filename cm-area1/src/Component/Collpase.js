@@ -1,5 +1,6 @@
 import Accordion from "react-bootstrap/Accordion";
 import ListGroup from "react-bootstrap/ListGroup";
+const { REACT_APP_PATH } = process.env;
 function FlushExample() {
     return (
         <Accordion flush>
