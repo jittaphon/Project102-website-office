@@ -1,11 +1,33 @@
-import meter1 from "../assets/img/logoDLIT.png";
-import meter2 from "../assets/img/dltv-main-logo.png";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Spinner } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import colorSharp from "../assets/img/color-sharp.png";
 import TrackVisibility from "react-on-screen";
-
+const { REACT_APP_PATH } = process.env;
 export const ChoiceBox = () => {
+    const [Data, setData] = useState();
+    const [Title, setTitle] = useState();
+    const type = "dlict";
+
+    useEffect(() => {
+        async function get() {
+            axios.get(`${REACT_APP_PATH}/admin/api/FindServiceByType/${type}`).then((res) => {
+                setData(res.data);
+            });
+        }
+        get();
+    }, []);
+    useEffect(() => {
+        async function get() {
+            axios.get(`${REACT_APP_PATH}/admin/api/ServiceTitleFindByType/${type}`).then((res) => {
+                setTitle(res.data);
+            });
+        }
+        get();
+    }, []);
+
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
@@ -32,52 +54,63 @@ export const ChoiceBox = () => {
                 <div className="row">
                     <div className="col-12">
                         <div className="ChoiceBox-bx wow zoomIn">
-                            <TrackVisibility>
-                                {({ isVisible }) => (
-                                    <div className={isVisible ? "animate__animated animate__flipInX" : ""}>
-                                        <h2>Distance Learning Information Technology</h2>
+                            {Title ? (
+                                Title.map((Title) => {
+                                    return (
+                                        <TrackVisibility>
+                                            {({ isVisible }) => (
+                                                <div className={isVisible ? "animate__animated animate__flipInX" : ""}>
+                                                    <h2>{Title.title}</h2>
+                                                    <p>{Title.subtitle}</p>
+                                                </div>
+                                            )}
+                                        </TrackVisibility>
+                                    );
+                                })
+                            ) : (
+                                <Spinner
+                                    animation="border"
+                                    role="status"
+                                    style={{ width: "3rem", height: "3rem", margin: "20px" }}
+                                >
+                                    <span className="visually-hidden">Loading...</span>
+                                </Spinner>
+                            )}
 
-                                        <p>
-                                            เครื่องมือที่มีเนื้อหาและเทคโนโลยีสำหรับพัฒนาคุณภาพการศึกษาอย่างครบวงจร
-                                            ตั้งแต่ การวางแผน การจัดการเรียนรู้
-                                            การจัดการเรียนการสอนตามหลักสูตรแกนกลางการศึกษาฯ
-                                            การจัดการเรียนการสอนเพิ่มเติม การทดสอบที่มีประสิทธิภาพ
-                                            และการพัฒนาวิชาชีพอย่างยั่งยืน
-                                        </p>
-                                    </div>
-                                )}
-                            </TrackVisibility>
                             <Carousel
                                 responsive={responsive}
                                 infinite={true}
                                 className="owl-carousel owl-theme ChoiceBox-slider"
                             >
-                                <TrackVisibility>
-                                    {({ isVisible }) => (
-                                        <div className={isVisible ? "animate__animated animate__flipInX" : ""}>
-                                            <div className="item">
-                                                <a
-                                                    href="http://www.dlit.ac.th/site/index.php"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                >
-                                                    <img src={meter1} alt="Image" />
-                                                </a>
-                                            </div>
-                                        </div>
-                                    )}
-                                </TrackVisibility>
-                                <TrackVisibility>
-                                    {({ isVisible }) => (
-                                        <div className={isVisible ? "animate__animated animate__flipInX" : ""}>
-                                            <div className="item">
-                                                <a href=" https://dltv.ac.th/" target="_blank" rel="noreferrer">
-                                                    <img src={meter2} alt="Image" />
-                                                </a>
-                                            </div>
-                                        </div>
-                                    )}
-                                </TrackVisibility>
+                                {Data ? (
+                                    Data.map((data) => {
+                                        return (
+                                            <TrackVisibility>
+                                                {({ isVisible }) => (
+                                                    <div
+                                                        className={
+                                                            isVisible ? "animate__animated animate__flipInX" : ""
+                                                        }
+                                                    >
+                                                        <div className="item">
+                                                            <a href={data.url} target="_blank" rel="noreferrer">
+                                                                <img src={data.image} alt="Image" />
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </TrackVisibility>
+                                        );
+                                    })
+                                ) : (
+                                    <Spinner
+                                        animation="border"
+                                        role="status"
+                                        style={{ width: "3rem", height: "3rem", margin: "20px" }}
+                                    >
+                                        <span className="visually-hidden">Loading...</span>
+                                    </Spinner>
+                                )}
                             </Carousel>
                         </div>
                     </div>

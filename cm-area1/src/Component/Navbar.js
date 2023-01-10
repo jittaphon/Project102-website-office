@@ -62,7 +62,7 @@ export const NavBar = () => {
                             className={activeLink === "information" ? "active navbar-link" : "navbar-link"}
                             onClick={() => onUpdateActiveLink("information")}
                         >
-                            Data
+                            BigData
                         </Nav.Link>
 
                         <Nav.Link

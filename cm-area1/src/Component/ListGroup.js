@@ -1,25 +1,35 @@
 import ListGroup from "react-bootstrap/ListGroup";
-
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Spinner } from "react-bootstrap";
+const { REACT_APP_PATH } = process.env;
 function FlushExample() {
+    const [DataAbout, setDataAbout] = useState();
+
+    useEffect(() => {
+        async function get() {
+            axios.get(`${REACT_APP_PATH}/admin/api/FindMission`).then((res) => {
+                setDataAbout(res.data);
+            });
+        }
+        get();
+    }, []);
     return (
         <ListGroup variant="flush">
-            <ListGroup.Item>
-                ดำเนินการเกี่ยวกับการบริหารจัดการระบบเทคโนโลยีสารสนเทศและการสื่อสาร ในสำนักงานและสถานศึกษาในสังกัด
-            </ListGroup.Item>
-            <ListGroup.Item>
-                ศึกษา วิเคราะห์ ออกแบบและพัฒนาโปรแกรมประยุกต์ สำหรับการบริหารจัดการและการจัดการเรียนการสอน
-            </ListGroup.Item>
-            <ListGroup.Item>
-                ศึกษา วิเคราะห์ ออกแบบและพัฒนาระบบเครือข่ายเทคโนโลยีและการสื่อสารในสำนักงานและสถานศึกษาในสังกัด
-            </ListGroup.Item>
-            <ListGroup.Item>
-                ให้บริการเกี่ยวกับการปรับปรุง พัฒนาโปรแกรม รวมทั้งการให้บริการการติดตั้ง บำรุง
-                ซ่อมแซมอุปกรณ์คอมพิวเตอร์ของสำนักงานและสถานศึกษา
-            </ListGroup.Item>
-            <ListGroup.Item>
-                ปฏิบัติงานร่วมกับหรือสนับสนุนการปฏิบัติงานของหน่วยงานอื่นที่เกี่ยวข้องหรือที่ได้รับ มอบหมาย
-            </ListGroup.Item>
-            <ListGroup.Item>จัดอบรม พัฒนาบุคลากรด้านเทคโนโลยีสารสนเทศและการสื่อสาร</ListGroup.Item>
+            {DataAbout ? (
+                DataAbout.map((data) => {
+                    return (
+                        <ListGroup.Item>
+                           {data.text}
+                        </ListGroup.Item>
+                    );
+                })
+            ) : (
+                <Spinner animation="border" role="status" style={{ width: "3rem", height: "3rem", margin: "20px" }}>
+                    <span className="visually-hidden">Loading...</span>
+                </Spinner>
+            )}
+
         </ListGroup>
     );
 }

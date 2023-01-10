@@ -1,7 +1,23 @@
-import "react-multi-carousel/lib/styles.css";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import { Spinner } from "react-bootstrap";
+import ReactPlayer from "react-player/youtube";
+const { REACT_APP_PATH } = process.env;
 
 export const VIDEO = () => {
+    const [Data, setData] = useState();
+
+    useEffect(() => {
+        async function get() {
+            axios.get(`${REACT_APP_PATH}/admin/api/FindVideo`).then((res) => {
+                setData(res.data);
+            });
+        }
+        get();
+    }, []);
+
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
@@ -38,28 +54,27 @@ export const VIDEO = () => {
                                 controls={false}
                                 indicators={false}
                             >
-                                <div class="ratio ratio-16x9">
-                                    <iframe
-                                        src="https://www.youtube.com/embed/DZmN0bO4PbA"
-                                        title="YouTube video"
-                                        allowfullscreen
-                                    ></iframe>
-                                </div>
-
-                                <div class="ratio ratio-16x9">
-                                    <iframe
-                                        src="https://www.youtube.com/embed/fZ_9gleqUd8"
-                                        title="YouTube video"
-                                        allowfullscreen
-                                    ></iframe>
-                                </div>
-                                <div class="ratio ratio-16x9">
-                                    <iframe
-                                        src="https://www.youtube.com/embed/nv8T9hVZvKU"
-                                        title="YouTube video"
-                                        allowfullscreen
-                                    ></iframe>
-                                </div>
+                                {Data ? (
+                                    Data.map((Data) => {
+                                        return (
+                                            <ReactPlayer
+                                                controls
+                                                className="react-player"
+                                                url={Data.url}
+                                                width="auto"
+                                                height="200px"
+                                            />
+                                        );
+                                    })
+                                ) : (
+                                    <Spinner
+                                        animation="border"
+                                        role="status"
+                                        style={{ width: "3rem", height: "3rem", margin: "20px" }}
+                                    >
+                                        <span className="visually-hidden">Loading...</span>
+                                    </Spinner>
+                                )}
                             </Carousel>
                         </div>
                     </div>

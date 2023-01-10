@@ -1,11 +1,34 @@
-import meter1 from "../assets/img/meter1.png";
-import meter2 from "../assets/img/meter2.png";
-import meter3 from "../assets/img/meter3.png";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import colorSharp from "../assets/img/color-sharp.png";
+import { Spinner } from "react-bootstrap";
+import TrackVisibility from "react-on-screen";
+const { REACT_APP_PATH } = process.env;
 
 export const Skills = () => {
+    const [Data, setData] = useState();
+    const [Title, setTitle] = useState();
+    const type = "service";
+
+    useEffect(() => {
+        async function get() {
+            axios.get(`${REACT_APP_PATH}/admin/api/FindServiceByType/${type}`).then((res) => {
+                setData(res.data);
+            });
+        }
+        get();
+    }, []);
+    useEffect(() => {
+        async function get() {
+            axios.get(`${REACT_APP_PATH}/admin/api/ServiceTitleFindByType/${type}`).then((res) => {
+                setTitle(res.data);
+            });
+        }
+        get();
+    }, []);
+
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
@@ -32,28 +55,64 @@ export const Skills = () => {
                 <div className="row">
                     <div className="col-12">
                         <div className="skill-bx wow zoomIn">
-                            <h2>บริการ</h2>
-                            <p>
-                                Bridge the gap between your digital vision and reality with global technology services .
-                                <br></br>operational support and training you need..
-                            </p>
+                            {Title ? (
+                                Title.map((Title) => {
+                                    return (
+                                        <TrackVisibility>
+                                            {({ isVisible }) => (
+                                                <div className={isVisible ? "animate__animated animate__flipInX" : ""}>
+                                                    <h2>{Title.title}</h2>
+                                                    <p>{Title.subtitle}</p>
+                                                </div>
+                                            )}
+                                        </TrackVisibility>
+                                    );
+                                })
+                            ) : (
+                                <Spinner
+                                    animation="border"
+                                    role="status"
+                                    style={{ width: "3rem", height: "3rem", margin: "20px" }}
+                                >
+                                    <span className="visually-hidden">Loading...</span>
+                                </Spinner>
+                            )}
+
                             <Carousel
                                 responsive={responsive}
                                 infinite={true}
                                 className="owl-carousel owl-theme skill-slider"
                             >
-                                <div className="item">
-                                    <img src={meter1} alt="Image" />
-                                    <h5>Conference</h5>
-                                </div>
-                                <div className="item">
-                                    <img src={meter2} alt="Image" />
-                                    <h5>Data Service</h5>
-                                </div>
-                                <div className="item">
-                                    <img src={meter3} alt="Image" />
-                                    <h5>IT Support</h5>
-                                </div>
+                                {Data ? (
+                                    Data.map((Data) => {
+                                        return (
+                                            <TrackVisibility>
+                                                {({ isVisible }) => (
+                                                    <div
+                                                        className={
+                                                            isVisible ? "animate__animated animate__flipInX" : ""
+                                                        }
+                                                    >
+                                                        <div className="item">
+                                                            <a href={Data.url} rel="noreferrer">
+                                                                <img src={Data.image} alt="Image" />
+                                                            </a>
+                                                            <h5>Conference</h5>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </TrackVisibility>
+                                        );
+                                    })
+                                ) : (
+                                    <Spinner
+                                        animation="border"
+                                        role="status"
+                                        style={{ width: "3rem", height: "3rem", margin: "20px" }}
+                                    >
+                                        <span className="visually-hidden">Loading...</span>
+                                    </Spinner>
+                                )}
                             </Carousel>
                         </div>
                     </div>

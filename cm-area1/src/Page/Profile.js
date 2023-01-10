@@ -3,7 +3,7 @@ import { ProfilePage } from "../Component/ProfileComponent";
 import { motion } from "framer-motion";
 const Profile = () => {
     return (
-        <motion.div className="">
+        <motion.div>
             <ProfilePage />
         </motion.div>
     );

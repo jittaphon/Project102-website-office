@@ -7,44 +7,43 @@ import projImg3 from "../assets/img/project-img3.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
-import {AboutBackDrop} from "./About";
-
+import { AboutBackDrop } from "./About";
+import { OPMBackDrop } from "./OPMBackDrop";
 
 export const News = (className) => {
-
     const projects = [
         {
-            id:"1",
+            id: "1",
             title: "Business Startup",
             description: "Design & Development",
             imgUrl: projImg1,
         },
         {
-            id:"2",
+            id: "2",
             title: "Business Startup",
             description: "Design & Development",
             imgUrl: projImg2,
         },
         {
-            id:"3",
+            id: "3",
             title: "Business Startup",
             description: "Design & Development",
             imgUrl: projImg3,
         },
         {
-            id:"4",
+            id: "4",
             title: "Business Startup",
             description: "Design & Development",
             imgUrl: projImg1,
         },
         {
-            id:"5",
+            id: "5",
             title: "Business Startup",
             description: "Design & Development",
             imgUrl: projImg2,
         },
         {
-            id:"6",
+            id: "6",
             title: "Business Startup",
             description: "Design & Development",
             imgUrl: projImg3,
@@ -87,13 +86,10 @@ export const News = (className) => {
                                                     })}
                                                 </Row>
                                             </Tab.Pane>
-                                            <Tab.Pane eventKey="section">
-                                                <p>
-                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-                                                    quam, quod neque provident velit, rem explicabo excepturi id illo
-                                                    molestiae blanditiis, eligendi dicta officiis asperiores delectus
-                                                    quasi inventore debitis quo.
-                                                </p>
+                                            <Tab.Pane eventKey="second">
+                                                <div>
+                                                    <OPMBackDrop />
+                                                </div>
                                             </Tab.Pane>
                                             <Tab.Pane eventKey="third">
                                                 <div>

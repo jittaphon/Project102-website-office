@@ -1,22 +1,10 @@
 /************ Custom Font ************/
-@font-face {
-    font-family: Centra;
-    src: url("./assets/font/CentraNo2-Bold.ttf");
-    font-weight: 700;
-}
-@font-face {
-    font-family: Centra;
-    src: url("./assets/font/CentraNo2-Medium.ttf");
-    font-weight: 500;
-}
-@font-face {
-    font-family: Centra;
-    src: url("./assets/font/CentraNo2-Book.ttf");
-    font-weight: 400;
-}
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
 
 /************ Default Css ************/
 * {
+    font-family: 'Kanit', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -915,4 +903,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .react-multi-carousel-item {
     padding: 0px 10px 0px 10px;
+}
+.zoom:hover {
+    transform: scale(1.1);
+}
+.zoom {
+    transition: transform 0.2s;
 }
