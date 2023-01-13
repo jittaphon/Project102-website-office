@@ -97,7 +97,7 @@ export const Skills = () => {
                                                             <a href={Data.url} rel="noreferrer">
                                                                 <img src={Data.image} alt="Image" />
                                                             </a>
-                                                            <h5>Conference</h5>
+                                                            <h5>{Data.name}</h5>
                                                         </div>
                                                     </div>
                                                 )}

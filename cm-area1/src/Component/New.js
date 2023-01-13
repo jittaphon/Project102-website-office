@@ -1,54 +1,27 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { NewsCard } from "./NewsCard";
-import React from "react";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import { AboutBackDrop } from "./About";
 import { OPMBackDrop } from "./OPMBackDrop";
-
+import { Link } from "react-router-dom";
+const { REACT_APP_PATH } = process.env;
 export const News = (className) => {
-    const projects = [
-        {
-            id: "1",
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg1,
-        },
-        {
-            id: "2",
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg2,
-        },
-        {
-            id: "3",
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg3,
-        },
-        {
-            id: "4",
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg1,
-        },
-        {
-            id: "5",
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg2,
-        },
-        {
-            id: "6",
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg3,
-        },
-    ];
+    const [Data, setData] = useState([]);
+
+    useEffect(() => {
+        async function get() {
+            axios.get(`${REACT_APP_PATH}/admin/api/FindNews`).then((res) => {
+                setData(res.data.reverse());
+            });
+        }
+        get();
+    }, []);
+
+    console.log(Data);
 
     return (
         <section className="project" id="project">
@@ -80,9 +53,14 @@ export const News = (className) => {
                                             className={isVisible ? "animate__animated animate__slideInUp" : ""}
                                         >
                                             <Tab.Pane eventKey="first">
+
+                                                <Link to={`/article`} style={{ textDecoration: 'none', color: 'white' }}>
+                                                    <div class="view-all"> View All</div>
+                                                </Link>
+
                                                 <Row>
-                                                    {projects.map((project, index) => {
-                                                        return <NewsCard key={index} {...project} />;
+                                                    {Data.slice(0,6).map((data, index) => {
+                                                        return <NewsCard key={index} data={data} />;
                                                     })}
                                                 </Row>
                                             </Tab.Pane>

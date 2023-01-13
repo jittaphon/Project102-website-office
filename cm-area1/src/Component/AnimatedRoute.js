@@ -8,6 +8,7 @@ import FAQ from "../Page/FAQ";
 import Contact from "../Page/Contact";
 import DService from "../Page/DataService";
 import NewsDetail from "../Page/NewsDetail";
+import { ArticlePage } from "../Page/ArticleAll";
 import { AnimatePresence } from "framer-motion";
 
 const AnimatedRoute = () => {
@@ -22,7 +23,10 @@ const AnimatedRoute = () => {
                 <Route path="/Contact-us" element={<Contact />} />
                 <Route path="/FAQ" element={<FAQ />} />
                 <Route path="/information/data-service" element={<DService />} />
-                <Route path="/news/news-detail/:id" element={<NewsDetail />} />
+                <Route path="/article" element={<ArticlePage />}/>
+                <Route path="/article/:id" element={<NewsDetail />} />
+
+                
             </Routes>
         </AnimatePresence>
     );
