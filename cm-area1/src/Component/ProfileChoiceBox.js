@@ -28,7 +28,7 @@ export const ChoiceBox = () => {
                         <div className="ChoiceBox-bx wow zoomIn">
                             <TrackVisibility>
                                 {({ isVisible }) => (
-                                    <div className={isVisible ? "animate__animated animate__flipInX" : ""}>
+                                    <div className={isVisible ? "animate__animated  animate__fadeInDown" : ""}>
                                         <h1>บุคลากร</h1>
                                     </div>
                                 )}

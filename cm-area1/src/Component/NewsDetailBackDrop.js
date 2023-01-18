@@ -20,7 +20,7 @@ export const NewsDetailBackDrop = () => {
             });
         }
         get();
-    }, []);
+    }, [id]);
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -65,7 +65,7 @@ export const NewsDetailBackDrop = () => {
                     </div>
                 </div>
             </div>
-            <img className="background-image-left" src={colorSharp} alt="Image" />
+            <img className="background-image-left" src={colorSharp} alt="ict" />
         </section>
     );
 };

@@ -59,7 +59,11 @@ export const ChoiceBox = () => {
                                     return (
                                         <TrackVisibility>
                                             {({ isVisible }) => (
-                                                <div className={isVisible ? "animate__animated animate__flipInX" : ""}>
+                                                <div
+                                                    className={
+                                                        isVisible ? "animate__animated  animate__fadeInDown" : ""
+                                                    }
+                                                >
                                                     <h2>{Title.title}</h2>
                                                     <p>{Title.subtitle}</p>
                                                 </div>

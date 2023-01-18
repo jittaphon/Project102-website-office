@@ -21,8 +21,6 @@ export const News = (className) => {
         get();
     }, []);
 
-    console.log(Data);
-
     return (
         <section className="project" id="project">
             <Container>
@@ -53,13 +51,15 @@ export const News = (className) => {
                                             className={isVisible ? "animate__animated animate__slideInUp" : ""}
                                         >
                                             <Tab.Pane eventKey="first">
-
-                                                <Link to={`/article`} style={{ textDecoration: 'none', color: 'white' }}>
+                                                <Link
+                                                    to={`/article`}
+                                                    style={{ textDecoration: "none", color: "white" }}
+                                                >
                                                     <div class="view-all"> View All</div>
                                                 </Link>
 
                                                 <Row>
-                                                    {Data.slice(0,6).map((data, index) => {
+                                                    {Data.slice(0, 6).map((data, index) => {
                                                         return <NewsCard key={index} data={data} />;
                                                     })}
                                                 </Row>
