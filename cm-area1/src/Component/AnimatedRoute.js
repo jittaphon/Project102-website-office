@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "../Page/Home";
 import Data from "../Page/Data";
 import {DataOfYear} from "../Page/SubPage/DataOfYear";
+import {DataOfGroupOfData} from "../Page/SubPage/DataOfGroupOfData";
 import Profile from "../Page/Profile";
 import DLICT from "../Page/DLICT";
 import FAQ from "../Page/FAQ";
@@ -19,6 +20,7 @@ const AnimatedRoute = () => {
                 <Route path="/*" element={<Home />} />
                 <Route path="/information/data" element={<Data />} />
                 <Route path="/information/data/:year" element={<DataOfYear />} />
+                <Route path="/information/data/:year/:group/" element={<DataOfGroupOfData />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/DLICT" element={<DLICT />} />
                 <Route path="/Contact-us" element={<Contact />} />

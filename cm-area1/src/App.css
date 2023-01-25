@@ -983,7 +983,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     margin: 1rem;
     position: relative;
     width: 200px;
-  
+    background-image: url(https://DLICT-CHIANGMAI-AREA1.github.io/DLICT-WEBSITE/image/dot.png);
 }
 .card:hover {
     -webkit-transform: scale(0.8);
@@ -1010,4 +1010,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .mx-c {
     margin-right: 1rem !important;
     margin-left: 3rem !important;
+}
+.icon {
+    margin-top: 50px;
+    width: 30%;
+    height: auto;
 }

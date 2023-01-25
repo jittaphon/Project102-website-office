@@ -34,11 +34,12 @@ export const ChoiceBox = () => {
                                 )}
                             </TrackVisibility>
 
-                            <div class="row justify-content-center ">
+                            <div className="row justify-content-center ">
                                 {leader ? (
-                                    leader.map((leader) => {
+                                    leader.map((leader, index) => {
                                         return (
                                             <Card
+                                                key={index}
                                                 style={{ width: "12rem", margin: "10px", padding: "0px" }}
                                                 className="zoom"
                                             >
@@ -62,11 +63,12 @@ export const ChoiceBox = () => {
                                     </Spinner>
                                 )}
                             </div>
-                            <div class="row justify-content-center">
+                            <div className="row justify-content-center">
                                 {group_leader ? (
-                                    group_leader.map((group_leader) => {
+                                    group_leader.map((group_leader, index) => {
                                         return (
                                             <Card
+                                                key={index}
                                                 style={{ width: "12rem", margin: "10px", padding: "0px" }}
                                                 className="zoom"
                                             >
@@ -90,19 +92,21 @@ export const ChoiceBox = () => {
                                     </Spinner>
                                 )}
                             </div>
-                            <div class="row justify-content-center">
+                            <div className="row justify-content-center">
                                 {general ? (
-                                    general.map((general) => {
-                                        console.log(general);
+                                    general.map((general, index) => {
                                         return (
                                             <Card
+                                                key={index}
                                                 style={{
                                                     width: "12rem",
                                                     margin: "10px 20px 10px 20px",
                                                     padding: "0px",
                                                 }}
                                                 className="zoom"
-                                                data-toggle="tooltip" data-placement="right" title="Tooltip on right"
+                                                data-toggle="tooltip"
+                                                data-placement="right"
+                                                title="Tooltip on right"
                                             >
                                                 <a
                                                     href={`${general.Operating_Manual.url}`}

@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import TrackVisibility from "react-on-screen";
 export const BoxYear = (data, className) => {
     return (
-        <div class="col-3 mx-c my-4 ">
+        <div className="col-3 mx-c my-4 ">
             <TrackVisibility>
                 {({ isVisible }) => (
                     <div className={isVisible ? "animate__animated animate__fadeInUp" : ""}>
-                        <div class="card card-4">
+                        <div className="card card-4">
                             <Link
                                 className="text-linkdata "
                                 style={{ textDecoration: "none", color: "black" }}

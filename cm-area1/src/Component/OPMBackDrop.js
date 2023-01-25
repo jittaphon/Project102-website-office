@@ -20,9 +20,17 @@ export const OPMBackDrop = () => {
         <section className="BackDrop" id="BackDrop">
             <div className="container-About">
                 {Data ? (
-                    Data.map((Data) => {
+                    Data.map((Data, index) => {
                         return (
-                            <iframe src={`${Data.url}`} style={{ height: '1000px' }} frameborder="0" height="100%" width="100%" title="myFrame"></iframe>
+                            <iframe
+                                key={index}
+                                src={`${Data.url}`}
+                                style={{ height: "1000px" }}
+                                frameBorder="0"
+                                height="100%"
+                                width="100%"
+                                title="myFrame"
+                            ></iframe>
                         );
                     })
                 ) : (

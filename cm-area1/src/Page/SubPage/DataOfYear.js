@@ -54,20 +54,18 @@ export const DataOfYear = (className) => {
                                     <TrackVisibility>
                                         {({ isVisible }) => (
                                             <div className={isVisible ? "animate__animated  animate__fadeInDown" : ""}>
-                                                <h1 class="headNew">หน่วยงานในสังกัด</h1>
-                                                <p>{Data.name_year}</p>
+                                                <h1 className="headNew">หน่วยงานในสังกัด</h1>
                                             </div>
                                         )}
                                     </TrackVisibility>
-                                    <div class="row justify-content-end ">
-                                        <div class="col-3">
+                                    <div className="row justify-content-end ">
+                                        <div className="col-3">
                                             <select
-                                                class="form-select "
-                                                aria-label="Default select example"
+                                                className="form-select "
                                                 value={Data.name_year}
                                                 onChange={handleYearChange}
                                             >
-                                                <option selected>{Data.name_year}</option>
+                                                <option>{Data.name_year}</option>
                                                 {Year ? (
                                                     Year.map((Year, index) => {
                                                         return <SelectYear key={index} data={Year} />;
@@ -84,8 +82,8 @@ export const DataOfYear = (className) => {
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="d-flex flex-wrap">
+                                    <div className="row">
+                                        <div className="d-flex flex-wrap">
                                             {Group_Data ? (
                                                 Group_Data.map((data, index) => {
                                                     return <GroupData key={index} data={data} />;

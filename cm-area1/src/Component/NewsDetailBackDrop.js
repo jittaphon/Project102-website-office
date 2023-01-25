@@ -31,9 +31,9 @@ export const NewsDetailBackDrop = () => {
                     <div className="col-12">
                         <div className="NewsDetailBackDrop-bx wow zoomIn">
                             <div>
-                                <h2 class="data-h">{Data.Headline}</h2>
-                                <img class="imagedetailCover" src={TitleImage} alt="ict" />
-                                <p class="data-content">{Data.content}</p>
+                                <h2 className="data-h">{Data.Headline}</h2>
+                                <img className="imagedetailCover" src={TitleImage} alt="ict" />
+                                <p className="data-content">{Data.content}</p>
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ export const NewsDetailBackDrop = () => {
                             {Image ? (
                                 <div class="row" className="container-img">
                                     {Image.map((i) => (
-                                        <img key={i} src={i} alt="Girl in a jacket" class="zooms"></img>
+                                        <img key={i} src={i} alt="Girl in a jacket" className="zooms"></img>
                                     ))}
                                 </div>
                             ) : (

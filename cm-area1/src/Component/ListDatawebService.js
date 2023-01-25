@@ -2,7 +2,7 @@ import React from "react";
 import "animate.css";
 
 
-const ListDatawebService = ({classname, data}) => {
+const ListDatawebService = ({className, data}) => {
 
     return (
         <tr>

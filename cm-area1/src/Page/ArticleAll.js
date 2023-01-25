@@ -30,7 +30,7 @@ export const ArticlePage = (className) => {
                                     <TrackVisibility>
                                         {({ isVisible }) => (
                                             <div className={isVisible ? "animate__animated animate__flipInX" : ""}>
-                                                <h1 class="headNew">สื่อประชาสัมพันธ์</h1>
+                                                <h1 className="headNew">สื่อประชาสัมพันธ์</h1>
                                             </div>
                                         )}
                                     </TrackVisibility>

@@ -33,7 +33,7 @@ export const BackDroup = () => {
                                     </div>
                                 )}
                             </TrackVisibility>
-                            <div class="row">
+                            <div className="row">
                                 {Data ? (
                                     Data.map((data, index) => {
                                         return <BoxYear key={index} data={data} />;

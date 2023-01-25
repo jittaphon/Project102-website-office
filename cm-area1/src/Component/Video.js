@@ -55,9 +55,10 @@ export const VIDEO = () => {
                                 indicators={false}
                             >
                                 {Data ? (
-                                    Data.map((Data) => {
+                                    Data.map((Data, index) => {
                                         return (
                                             <ReactPlayer
+                                                key={index}
                                                 controls
                                                 className="react-player"
                                                 url={Data.url}

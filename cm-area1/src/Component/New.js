@@ -55,7 +55,7 @@ export const News = (className) => {
                                                     to={`/article`}
                                                     style={{ textDecoration: "none", color: "white" }}
                                                 >
-                                                    <div class="view-all"> View All</div>
+                                                    <div className="view-all"> View All</div>
                                                 </Link>
 
                                                 <Row>
@@ -82,7 +82,7 @@ export const News = (className) => {
                     </Col>
                 </Row>
             </Container>
-            <img className="background-image-right" src={colorSharp2} alt=""></img>
+            <img className="background-image-right" src={colorSharp2} alt="ict"></img>
         </section>
     );
 };

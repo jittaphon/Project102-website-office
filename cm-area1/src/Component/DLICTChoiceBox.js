@@ -55,9 +55,9 @@ export const ChoiceBox = () => {
                     <div className="col-12">
                         <div className="ChoiceBox-bx wow zoomIn">
                             {Title ? (
-                                Title.map((Title) => {
+                                Title.map((Title, index) => {
                                     return (
-                                        <TrackVisibility>
+                                        <TrackVisibility key={index}>
                                             {({ isVisible }) => (
                                                 <div
                                                     className={
@@ -87,9 +87,9 @@ export const ChoiceBox = () => {
                                 className="owl-carousel owl-theme ChoiceBox-slider"
                             >
                                 {Data ? (
-                                    Data.map((data) => {
+                                    Data.map((data, index) => {
                                         return (
-                                            <TrackVisibility>
+                                            <TrackVisibility key={index}>
                                                 {({ isVisible }) => (
                                                     <div
                                                         className={
@@ -120,7 +120,7 @@ export const ChoiceBox = () => {
                     </div>
                 </div>
             </div>
-            <img className="background-image-left" src={colorSharp} alt="Image" />
+            <img className="background-image-left" src={colorSharp} alt="ict" />
         </section>
     );
 };

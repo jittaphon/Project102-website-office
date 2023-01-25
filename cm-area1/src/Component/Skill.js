@@ -56,9 +56,9 @@ export const Skills = () => {
                     <div className="col-12">
                         <div className="skill-bx wow zoomIn">
                             {Title ? (
-                                Title.map((Title) => {
+                                Title.map((Title, index) => {
                                     return (
-                                        <TrackVisibility>
+                                        <TrackVisibility key={index}>
                                             {({ isVisible }) => (
                                                 <div className={isVisible ? "animate__animated animate__flipInX" : ""}>
                                                     <h2>{Title.title}</h2>
@@ -84,9 +84,9 @@ export const Skills = () => {
                                 className="owl-carousel owl-theme skill-slider"
                             >
                                 {Data ? (
-                                    Data.map((Data) => {
+                                    Data.map((Data, index) => {
                                         return (
-                                            <TrackVisibility>
+                                            <TrackVisibility key={index}>
                                                 {({ isVisible }) => (
                                                     <div
                                                         className={
@@ -95,7 +95,7 @@ export const Skills = () => {
                                                     >
                                                         <div className="item">
                                                             <a href={Data.url} rel="noreferrer">
-                                                                <img src={Data.image} alt="Image" />
+                                                                <img src={Data.image} alt="ict" />
                                                             </a>
                                                             <h5>{Data.name}</h5>
                                                         </div>
@@ -118,7 +118,7 @@ export const Skills = () => {
                     </div>
                 </div>
             </div>
-            <img className="background-image-left" src={colorSharp} alt="Image" />
+            <img className="background-image-left" src={colorSharp} alt="ict" />
         </section>
     );
 };
