@@ -3,6 +3,8 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../assets/img/logo.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
 import navIcon3 from "../assets/img/nav-icon3.svg";
+import navIcon4 from "../assets/img/youtube.svg";
+import navIcon1 from "../assets/img/user.png";
 import { Link } from "react-router-dom";
 
 export const NavBar = () => {
@@ -89,23 +91,32 @@ export const NavBar = () => {
                             className={activeLink === "FAQ" ? "active navbar-link" : "navbar-link"}
                             onClick={() => onUpdateActiveLink("FAQ")}
                         >
-                           FAQ
+                            FAQ
                         </Nav.Link>
                     </Nav>
                     <span className="navbar-text">
                         <div className="social-icon">
-                            <a href="https://www.facebook.com/profile.php?id=100057185991041" target="_blank" rel="noreferrer">
+                            <a
+                                href="https://www.facebook.com/profile.php?id=100057185991041"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
                                 <img src={navIcon2} alt="" />
                             </a>
                             <a href="https://www.instagram.com/cmarea_1/" target="_blank" rel="noreferrer">
                                 <img src={navIcon3} alt="" />
                             </a>
+                            <a
+                                href="https://www.youtube.com/channel/UCtjlRN5V2b4tDvRCdzacp_w"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <img src={navIcon4} alt="" />
+                            </a>
+                            <a href="https://chiangmaiarea1-server.web.app/" target="_blank" rel="noreferrer">
+                                <img src={navIcon1} alt="" />
+                            </a>
                         </div>
-                        <a href="https://www.youtube.com/channel/UCtjlRN5V2b4tDvRCdzacp_w" target="_blank" rel="noreferrer">
-                            <button className="vvd">
-                                <span>Let’s Channel</span>
-                            </button>
-                        </a>
                     </span>
                 </Navbar.Collapse>
             </Container>
