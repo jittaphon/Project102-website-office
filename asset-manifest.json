@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/DLICT-WEBSITE/static/css/main.c6c4aca1.css",
-    "main.js": "/DLICT-WEBSITE/static/js/main.0219ad43.js",
+    "main.js": "/DLICT-WEBSITE/static/js/main.535e443e.js",
     "static/media/footer-bg.svg": "/DLICT-WEBSITE/static/media/footer-bg.6f618f84d7da2703bf25.svg",
     "static/media/color-sharp.png": "/DLICT-WEBSITE/static/media/color-sharp.bea361cfef80fefc2d1e.png",
     "static/media/color-sharp2.png": "/DLICT-WEBSITE/static/media/color-sharp2.c87586c6c2f549cb4aa6.png",
@@ -11,19 +11,21 @@
     "static/media/success.jpg": "/DLICT-WEBSITE/static/media/success.fd673b7a44cfb03c9608.jpg",
     "static/media/contact-img.svg": "/DLICT-WEBSITE/static/media/contact-img.87eac2b29352fa01abb2f9510ef6ac7e.svg",
     "static/media/WIFI.jpg": "/DLICT-WEBSITE/static/media/WIFI.454a3a469a0b91355509.jpg",
+    "static/media/user.png": "/DLICT-WEBSITE/static/media/user.6e7092c7b51b918a56f9.png",
     "static/media/revicons.eot": "/DLICT-WEBSITE/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/DLICT-WEBSITE/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/DLICT-WEBSITE/static/media/revicons.e8746a624ed098489406.woff",
     "static/media/logo.svg": "/DLICT-WEBSITE/static/media/logo.d1c91312c4bea2fba353abbd43549a83.svg",
+    "static/media/youtube.svg": "/DLICT-WEBSITE/static/media/youtube.1a5b91397069ea04409fd8b2997c1a86.svg",
     "static/media/nav-icon3.svg": "/DLICT-WEBSITE/static/media/nav-icon3.08b285abb8e118b52637efa5d65c5367.svg",
     "static/media/background2.svg": "/DLICT-WEBSITE/static/media/background2.c819b6d26f47a95114ef.svg",
     "index.html": "/DLICT-WEBSITE/index.html",
     "static/media/nav-icon2.svg": "/DLICT-WEBSITE/static/media/nav-icon2.178f497aa17b70c42df2a1a8c926ed01.svg",
     "main.c6c4aca1.css.map": "/DLICT-WEBSITE/static/css/main.c6c4aca1.css.map",
-    "main.0219ad43.js.map": "/DLICT-WEBSITE/static/js/main.0219ad43.js.map"
+    "main.535e443e.js.map": "/DLICT-WEBSITE/static/js/main.535e443e.js.map"
   },
   "entrypoints": [
     "static/css/main.c6c4aca1.css",
-    "static/js/main.0219ad43.js"
+    "static/js/main.535e443e.js"
   ]
 }
