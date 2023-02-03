@@ -6,7 +6,7 @@ import colorSharp from "../assets/img/color-sharp.png";
 import TrackVisibility from "react-on-screen";
 import Card from "react-bootstrap/Card";
 const { REACT_APP_PATH } = process.env;
-export const ChoiceBox = () => {
+export const ChoiceBox = ({ className, index }) => {
     const [Data, setData] = useState([]);
     useEffect(() => {
         function get() {
@@ -33,7 +33,6 @@ export const ChoiceBox = () => {
                                     </div>
                                 )}
                             </TrackVisibility>
-
                             <div className="row justify-content-center ">
                                 {leader ? (
                                     leader.map((leader, index) => {
@@ -43,13 +42,13 @@ export const ChoiceBox = () => {
                                                 style={{ width: "12rem", margin: "10px", padding: "0px" }}
                                                 className="zoom"
                                             >
-                                                <a
-                                                    href={`${leader.Operating_Manual.url}`}
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                >
-                                                    <Card.Img variant="top" src={`${leader.Profile}`} />
-                                                </a>
+                                                {leader.Operating_Manual ? (
+                                                    <a href={leader.Operating_Manual} target="_blank" rel="noreferrer">
+                                                        <Card.Img variant="top" src={leader.Profile} />
+                                                    </a>
+                                                ) : (
+                                                    <Card.Img variant="top" src={leader.Profile} />
+                                                )}
                                             </Card>
                                         );
                                     })
@@ -63,71 +62,83 @@ export const ChoiceBox = () => {
                                     </Spinner>
                                 )}
                             </div>
-                            <div className="row justify-content-center">
-                                {group_leader ? (
-                                    group_leader.map((group_leader, index) => {
-                                        return (
+                            {group_leader ? (
+                                group_leader.map((group_leader, index) => {
+                                    return (
+                                        <div className="row justify-content-center">
                                             <Card
                                                 key={index}
                                                 style={{ width: "12rem", margin: "10px", padding: "0px" }}
                                                 className="zoom"
                                             >
-                                                <a
-                                                    href={`${group_leader.Operating_Manual.url}`}
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                >
-                                                    <Card.Img variant="top" src={`${group_leader.Profile}`} />
-                                                </a>
+                                                {group_leader.Operating_Manual ? (
+                                                    <a
+                                                        href={group_leader.Operating_Manual}
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                    >
+                                                        <Card.Img variant="top" src={group_leader.Profile} />
+                                                    </a>
+                                                ) : (
+                                                    <Card.Img variant="top" src={group_leader.Profile} />
+                                                )}
                                             </Card>
-                                        );
-                                    })
-                                ) : (
-                                    <Spinner
-                                        animation="border"
-                                        role="status"
-                                        style={{ width: "3rem", height: "3rem", margin: "20px" }}
-                                    >
-                                        <span className="visually-hidden">Loading...</span>
-                                    </Spinner>
-                                )}
-                            </div>
-                            <div className="row justify-content-center">
-                                {general ? (
-                                    general.map((general, index) => {
-                                        return (
+                                        </div>
+                                    );
+                                })
+                            ) : (
+                                <Spinner
+                                    animation="border"
+                                    role="status"
+                                    style={{ width: "3rem", height: "3rem", margin: "20px" }}
+                                >
+                                    <span className="visually-hidden">Loading...</span>
+                                </Spinner>
+                            )}
+                            {general ? (
+                                general.map((general, index) => {
+                                    return (
+                                        <div className="row justify-content-center">
                                             <Card
                                                 key={index}
-                                                style={{
-                                                    width: "12rem",
-                                                    margin: "10px 20px 10px 20px",
-                                                    padding: "0px",
-                                                }}
+                                                style={{ width: "12rem", margin: "10px", padding: "0px" }}
                                                 className="zoom"
-                                                data-toggle="tooltip"
-                                                data-placement="right"
-                                                title="Tooltip on right"
                                             >
-                                                <a
-                                                    href={`${general.Operating_Manual.url}`}
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                >
-                                                    <Card.Img variant="top" src={`${general.Profile}`} />
-                                                </a>
+                                                {general.Operating_Manual ? (
+                                                    <a
+                                                        href={general.Operating_Manual}
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                    >
+                                                        <Card.Img variant="top" src={general.Profile} />
+                                                    </a>
+                                                ) : (
+                                                    <Card.Img variant="top" src={general.Profile} />
+                                                )}
                                             </Card>
-                                        );
-                                    })
-                                ) : (
-                                    <Spinner
-                                        animation="border"
-                                        role="status"
-                                        style={{ width: "3rem", height: "3rem", margin: "20px" }}
-                                    >
-                                        <span className="visually-hidden">Loading...</span>
-                                    </Spinner>
-                                )}
-                            </div>
+                                        </div>
+                                    );
+                                })
+                            ) : (
+                                <Spinner
+                                    animation="border"
+                                    role="status"
+                                    style={{ width: "3rem", height: "3rem", margin: "20px" }}
+                                >
+                                    <span className="visually-hidden">Loading...</span>
+                                </Spinner>
+                            )}
+                            {Data ? (
+                                <></>
+                            ) : (
+                                <Spinner
+                                    animation="border"
+                                    role="status"
+                                    style={{ width: "3rem", height: "3rem", margin: "20px" }}
+                                >
+                                    <span className="visually-hidden">Loading...</span>
+                                </Spinner>
+                            )}
                         </div>
                     </div>
                 </div>
