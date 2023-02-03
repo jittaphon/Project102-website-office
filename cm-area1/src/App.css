@@ -2,6 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap");
 
 /************ Default Css ************/
+.brand{
+    width: 9%
+}
 * {
     font-family: "Kanit", sans-serif;
     margin: 0;

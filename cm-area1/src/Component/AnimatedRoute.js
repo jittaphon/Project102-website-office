@@ -17,7 +17,6 @@ const AnimatedRoute = () => {
     return (
         <AnimatePresence>
             <Routes location={location} key={location.pathname}>
-                <Route path="/DLICT-WEBSITE/" element={<Home />} />
                 <Route path="/*" element={<Home />} />
                 <Route path="/information/data" element={<Data />} />
                 <Route path="/information/data/:year" element={<DataOfYear />} />
