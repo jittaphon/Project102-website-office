@@ -8,10 +8,13 @@ import Card from "react-bootstrap/Card";
 const { REACT_APP_PATH } = process.env;
 export const ChoiceBox = ({ className, index }) => {
     const [Data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
+        setLoading(true);
         function get() {
             axios.get(`${REACT_APP_PATH}/admin/api/DataPerson`).then((res) => {
                 setData(res.data);
+                setLoading(false);
             });
         }
         get();
@@ -19,6 +22,38 @@ export const ChoiceBox = ({ className, index }) => {
     const leader = Data.filter((element) => element.Positions === "leader");
     const group_leader = Data.filter((element) => element.Positions === "group_leader");
     const general = Data.filter((element) => element.Positions === "general");
+
+    if (loading) {
+        return (
+            <section className="ChoiceBox" id="ChoiceBoxs">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="ChoiceBox-bx wow zoomIn">
+                                <TrackVisibility>
+                                    {({ isVisible }) => (
+                                        <div className={isVisible ? "animate__animated  animate__fadeInDown" : ""}>
+                                            <h1>บุคลากร</h1>
+                                        </div>
+                                    )}
+                                </TrackVisibility>
+                                <div className="row justify-content-center ">
+                                    <Spinner
+                                        animation="border"
+                                        role="status"
+                                        style={{ width: "3rem", height: "3rem", margin: "20px" }}
+                                    >
+                                        <span className="visually-hidden">Loading...</span>
+                                    </Spinner>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img className="background-image-left" src={colorSharp} alt="BackGround" />
+            </section>
+        );
+    }
 
     return (
         <section className="ChoiceBox" id="ChoiceBoxs">
@@ -105,11 +140,7 @@ export const ChoiceBox = ({ className, index }) => {
                                                 className="zoom"
                                             >
                                                 {general.Operating_Manual ? (
-                                                    <a
-                                                        href={general.Operating_Manual}
-                                                        target="_blank"
-                                                        rel="noreferrer"
-                                                    >
+                                                    <a href={general.Operating_Manual} target="_blank" rel="noreferrer">
                                                         <Card.Img variant="top" src={general.Profile} />
                                                     </a>
                                                 ) : (
