@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/DLICT-WEBSITE/static/css/main.c6c4aca1.css",
-    "main.js": "/DLICT-WEBSITE/static/js/main.535e443e.js",
+    "main.js": "/DLICT-WEBSITE/static/js/main.3d9a58ee.js",
     "static/media/footer-bg.svg": "/DLICT-WEBSITE/static/media/footer-bg.6f618f84d7da2703bf25.svg",
     "static/media/color-sharp.png": "/DLICT-WEBSITE/static/media/color-sharp.bea361cfef80fefc2d1e.png",
     "static/media/color-sharp2.png": "/DLICT-WEBSITE/static/media/color-sharp2.c87586c6c2f549cb4aa6.png",
@@ -22,10 +22,10 @@
     "index.html": "/DLICT-WEBSITE/index.html",
     "static/media/nav-icon2.svg": "/DLICT-WEBSITE/static/media/nav-icon2.178f497aa17b70c42df2a1a8c926ed01.svg",
     "main.c6c4aca1.css.map": "/DLICT-WEBSITE/static/css/main.c6c4aca1.css.map",
-    "main.535e443e.js.map": "/DLICT-WEBSITE/static/js/main.535e443e.js.map"
+    "main.3d9a58ee.js.map": "/DLICT-WEBSITE/static/js/main.3d9a58ee.js.map"
   },
   "entrypoints": [
     "static/css/main.c6c4aca1.css",
-    "static/js/main.535e443e.js"
+    "static/js/main.3d9a58ee.js"
   ]
 }
