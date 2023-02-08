@@ -8,17 +8,20 @@ import { AccordionNameData1 } from "../../DataComponent/AccordionNameData1";
 import { Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-const { REACT_APP_PATH } = process.env;
+import Img4 from "../../assets/img/sorry.png";
+
 
 export const DataOfGroupOfData = (className) => {
     const { year } = useParams();
     const { group } = useParams();
     const [Data, setData] = useState();
+    const [DataName, setDataName] = useState();
 
     const fetchDataYear = async () => {
         try {
             const response = await axios.get(`http://localhost:7000/admin/api/FindDataInGroupOfData/${year}/${group}`);
             setData(response.data[0].date);
+            setDataName(response.data[0].name_data);
         } catch (error) {
             console.error(error);
         }
@@ -26,6 +29,41 @@ export const DataOfGroupOfData = (className) => {
     useEffect(() => {
         fetchDataYear();
     }, []);
+
+
+   if (Array.isArray(Data) && Data.length === 0) {
+        return (
+            <section className="banner-ArticlePage" id="home">
+                <Container>
+                    <section className="ChoiceBox" id="ChoiceBoxs">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-12">
+                                    <div className="ChoiceBox-bx wow zoomIn">
+                                        <TrackVisibility>
+                                            {({ isVisible }) => (
+                                                <div
+                                                    className={
+                                                        isVisible ? "animate__animated  animate__fadeInDown" : ""
+                                                    }
+                                                >
+                                                    <h1 className="headNew">{DataName}</h1>
+                                                </div>
+                                            )}
+                                        </TrackVisibility>
+                                        <Accordion>
+                                            <h3>ขออภัย ยังไม่มีข้อมูล</h3>
+                                            <img src={Img4} alt="ICT" style={{ width: '200px', height: '200px' }}></img>
+                                        </Accordion>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </Container>
+            </section>
+        );
+    }
 
     return (
         <section className="banner-ArticlePage" id="home">
@@ -38,7 +76,7 @@ export const DataOfGroupOfData = (className) => {
                                     <TrackVisibility>
                                         {({ isVisible }) => (
                                             <div className={isVisible ? "animate__animated  animate__fadeInDown" : ""}>
-                                                <h1 className="headNew">Data</h1>
+                                                <h1 className="headNew">{DataName}</h1>
                                             </div>
                                         )}
                                     </TrackVisibility>
