@@ -9,7 +9,7 @@ import { Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import Img4 from "../../assets/img/sorry.png";
-
+const { REACT_APP_PATH } = process.env;
 
 export const DataOfGroupOfData = (className) => {
     const { year } = useParams();
@@ -19,7 +19,7 @@ export const DataOfGroupOfData = (className) => {
 
     const fetchDataYear = async () => {
         try {
-            const response = await axios.get(`http://localhost:7000/admin/api/FindDataInGroupOfData/${year}/${group}`);
+            const response = await axios.get(`${REACT_APP_PATH}/admin/api/FindDataInGroupOfData/${year}/${group}`);
             setData(response.data[0].date);
             setDataName(response.data[0].name_data);
         } catch (error) {
