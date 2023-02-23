@@ -6,7 +6,7 @@ import { Row } from "react-bootstrap";
 import { NewsCard } from "../Component/NewsCard";
 import TrackVisibility from "react-on-screen";
 import { Spinner } from "react-bootstrap";
-const { REACT_APP_PATH } = process.env;
+const { REACT_APP_PATH ,REACT_APP_PATHNEW} = process.env;
 export const ArticlePage = (className) => {
     const [loading, setLoading] = useState(true);
     const [Data, setData] = useState([]);
