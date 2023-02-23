@@ -20,6 +20,7 @@ export const Skills = () => {
         }
         get();
     }, []);
+   
     useEffect(() => {
         async function get() {
             axios.get(`${REACT_APP_PATH}/admin/api/ServiceTitleFindByType/${type}`).then((res) => {

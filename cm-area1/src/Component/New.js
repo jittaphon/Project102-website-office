@@ -9,7 +9,7 @@ import { AboutBackDrop } from "./About";
 import { OPMBackDrop } from "./OPMBackDrop";
 import { Link } from "react-router-dom";
 import { Spinner } from "react-bootstrap";
-const { REACT_APP_PATH } = process.env;
+const { REACT_APP_PATH ,REACT_APP_PATHNEW} = process.env;
 
 export const News = (className) => {
     const [loading, setLoading] = useState(true);
@@ -18,7 +18,7 @@ export const News = (className) => {
     useEffect(() => {
         setLoading(true);
         async function get() {
-            axios.get(`${REACT_APP_PATH}/admin/api/FindNews`).then((res) => {
+            axios.get(`${REACT_APP_PATHNEW}/admin/api/FindNews`).then((res) => {
                 setData(res.data.reverse());
                 setLoading(false);
             });

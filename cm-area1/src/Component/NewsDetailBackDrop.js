@@ -4,7 +4,7 @@ import axios from "axios";
 import colorSharp from "../assets/img/color-sharp.png";
 import { Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-const { REACT_APP_PATH } = process.env;
+const { REACT_APP_PATH ,REACT_APP_PATHNEW} = process.env;
 
 export const NewsDetailBackDrop = () => {
     const { id } = useParams();
@@ -13,7 +13,7 @@ export const NewsDetailBackDrop = () => {
     const [Image, setImage] = useState();
     useEffect(() => {
         async function get() {
-            axios.get(`${REACT_APP_PATH}/admin/api/FindNewsById/${id}`).then((res) => {
+            axios.get(`${REACT_APP_PATHNEW}/admin/api/FindNewsById/${id}`).then((res) => {
                 setData(res.data);
                 setTitleImage(res.data.image_title_url[0]);
                 setImage(res.data.images[0]);
