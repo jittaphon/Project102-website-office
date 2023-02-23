@@ -14,7 +14,7 @@ export const ArticlePage = (className) => {
     useEffect(() => {
         setLoading(true);
         async function get() {
-            axios.get(`${REACT_APP_PATH}/admin/api/FindNews`).then((res) => {
+            axios.get(`${REACT_APP_PATHNEW}/admin/api/FindNews`).then((res) => {
                 setData(res.data.reverse());
                 setLoading(false);
             });
