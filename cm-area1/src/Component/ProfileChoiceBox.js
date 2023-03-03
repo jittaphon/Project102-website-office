@@ -5,23 +5,27 @@ import "react-multi-carousel/lib/styles.css";
 import colorSharp from "../assets/img/color-sharp.png";
 import TrackVisibility from "react-on-screen";
 import Card from "react-bootstrap/Card";
-const { REACT_APP_PATH } = process.env;
+const { REACT_APP_PATH2 } = process.env;
 export const ChoiceBox = ({ className, index }) => {
     const [Data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
         setLoading(true);
         function get() {
-            axios.get(`${REACT_APP_PATH}/admin/api/DataPerson`).then((res) => {
+            axios.get(`${REACT_APP_PATH2}/admin/api/DataPerson`).then((res) => {
                 setData(res.data);
                 setLoading(false);
             });
         }
         get();
     }, []);
+
+
     const leader = Data.filter((element) => element.Positions === "leader");
     const group_leader = Data.filter((element) => element.Positions === "group_leader");
     const general = Data.filter((element) => element.Positions === "general");
+
+    console.log(Data)
 
     if (loading) {
         return (
