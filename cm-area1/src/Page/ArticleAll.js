@@ -6,7 +6,7 @@ import { Row } from "react-bootstrap";
 import { NewsCard } from "../Component/NewsCard";
 import TrackVisibility from "react-on-screen";
 import { Spinner } from "react-bootstrap";
-const { REACT_APP_PATH ,REACT_APP_PATHNEW} = process.env;
+const { REACT_APP_PATH2 } = process.env;
 export const ArticlePage = (className) => {
     const [loading, setLoading] = useState(true);
     const [Data, setData] = useState([]);
@@ -14,7 +14,7 @@ export const ArticlePage = (className) => {
     useEffect(() => {
         setLoading(true);
         async function get() {
-            axios.get(`${REACT_APP_PATHNEW}/admin/api/FindNews`).then((res) => {
+            axios.get(`${REACT_APP_PATH2}/admin/api/FindNews`).then((res) => {
                 setData(res.data.reverse());
                 setLoading(false);
             });

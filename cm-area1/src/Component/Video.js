@@ -4,14 +4,14 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Spinner } from "react-bootstrap";
 import ReactPlayer from "react-player/youtube";
-const { REACT_APP_PATH } = process.env;
+const { REACT_APP_PATH2 } = process.env;
 
 export const VIDEO = () => {
     const [Data, setData] = useState();
 
     useEffect(() => {
         async function get() {
-            axios.get(`${REACT_APP_PATH}/admin/api/FindVideo`).then((res) => {
+            axios.get(`${REACT_APP_PATH2}/admin/api/FindVideo`).then((res) => {
                 setData(res.data);
             });
         }

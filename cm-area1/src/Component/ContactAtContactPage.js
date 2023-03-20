@@ -1,6 +1,6 @@
-import { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
-import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,7 +8,7 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-
+const { REACT_APP_PATH2 } = process.env;
 export const Contact = (className) => {
     const form = useRef();
     const first_name = useRef();
@@ -17,6 +17,23 @@ export const Contact = (className) => {
     const phone = useRef();
     const message = useRef();
     const [buttonText, setButtoText] = useState("Send");
+    const [Contact, setContact] = useState();
+    const [Facebook, setFacebook] = useState();
+    const [Instagram, setInstagram] = useState();
+    const [Youtube, setYoutube] = useState();
+    const [Twitter, setTwitter] = useState();
+    useEffect(() => {
+        async function get() {
+            axios.get(`${REACT_APP_PATH2}/admin/api/getOther`).then((res) => {
+                setContact(res.data[0].array);
+                setFacebook(res.data[2].array.Facebook);
+                setInstagram(res.data[2].array.Instagram);
+                setYoutube(res.data[2].array.Youtube);
+                setTwitter(res.data[2].array.Twitter);
+            });
+        }
+        get();
+    }, []);
 
     const SendEmail = async (e) => {
         e.preventDefault();
@@ -59,46 +76,32 @@ export const Contact = (className) => {
                 <Row className="align-items-center">
                     <Col size={12} md={6}>
                         <h3>ติดต่อเรา</h3>
-                        <p>
-                            สำนักงานเขตพื้นที่การศึกษาประถมศึกษาเชียงใหม่ เขต 1 อาคารอำนวยการกลาง ชั้น 4
-                            ศาลากลางจังหวัดเชียงใหม่ อำเภอเมืองเชียงใหม่ จังหวัดเชียงใหม่ 50300
-                        </p>
-                        <p> ติดต่อเราได้ที่ : 053-112333 </p>
-                        <p> โทรสาร : 053-112677 </p>
-                        <p> https://www.chiangmaiarea1.go.th </p>
-                        <p> ict@chiangmaiarea1.go.th </p>
+
+                        {Contact && Contact.map((item, index) => <p key={index}>{item}</p>)}
                     </Col>
                     <Col size={12} md={6}>
                         <h3>Social Media</h3>
                         <p>
-                            <a
-                                href="https://www.facebook.com/profile.php?id=100057185991041"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
+                            <a href={Facebook} target="_blank" rel="noreferrer">
                                 <FontAwesomeIcon icon={faFacebook} style={{ paddingRight: "10px" }} />
                                 CM AREA1 Facebook
                             </a>
                         </p>
                         <p>
-                            <a
-                                href="https://www.youtube.com/channel/UCtjlRN5V2b4tDvRCdzacp_w"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
+                            <a href={Youtube} target="_blank" rel="noreferrer">
                                 <FontAwesomeIcon icon={faYoutube} style={{ paddingRight: "10px" }} />
                                 Youtube
                             </a>
                         </p>
                         <p>
-                            <a href="https://twitter.com/nznIcVrk22iUFjZ" target="_blank" rel="noreferrer">
+                            <a href={Twitter} target="_blank" rel="noreferrer">
                                 <FontAwesomeIcon icon={faTwitter} style={{ paddingRight: "10px" }} />
                                 Twitter
                             </a>
                         </p>
                         <p>
                             {" "}
-                            <a href="https://www.instagram.com/cmarea_1/" target="_blank" rel="noreferrer">
+                            <a href={Instagram} target="_blank" rel="noreferrer">
                                 <FontAwesomeIcon icon={faInstagram} style={{ paddingRight: "10px" }} />
                                 Instagram
                             </a>

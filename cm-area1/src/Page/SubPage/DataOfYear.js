@@ -7,28 +7,57 @@ import { Spinner } from "react-bootstrap";
 import { SelectYear } from "../../DataComponent/SelectYear";
 import { GroupData } from "../../DataComponent/GroupData";
 import { useParams, useNavigate } from "react-router-dom";
-const { REACT_APP_PATH } = process.env;
+const { REACT_APP_PATH2 } = process.env;
 export const DataOfYear = (className) => {
     const { year } = useParams();
     const navigate = useNavigate();
     const [Year, setYear] = useState([]);
-    const [Data, setData] = useState([]);
     const [Group_Data, setGroupData] = useState();
-    const [selectedYear, setSelectedYear] = useState(year); // middle value to store selected year of data
+    const [selectedYear, setSelectedYear] = useState(year);
+   // middle value to store selected year of data
+
     useEffect(() => {
-        async function get() {
-            axios.get(`${REACT_APP_PATH}/admin/api/FindDataEachYear`).then((res) => {
-                setYear(res.data);
+        function get() {
+            axios.get(`${REACT_APP_PATH2}/admin/api/FindDataEachYearById/${year}`).then((res) => {
+                const { id, Year } = res.data[0]; // Accessing the first item in the response array
+                const parsedData = {
+                    id: id, // add the id property to the parsed data object
+                    year: JSON.parse(Year), // parse the Year property for each item
+                };
+                setGroupData(parsedData.year.group);
             });
         }
         get();
+    }, [year]);
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await axios.get(`${REACT_APP_PATH2}/admin/api/FindDataEachYear`);
+                const parsedData = response.data.map((item) => {
+                    const { id, Year } = item;
+                    return {
+                        id: id,
+                        year: JSON.parse(Year),
+                    };
+                });
+                setYear(parsedData);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        fetchData();
     }, []);
 
     const fetchData = async () => {
         try {
-            const response = await axios.get(`${REACT_APP_PATH}/admin/api/FindDataEachYearById/${selectedYear}`);
-            setData(response.data);
-            setGroupData(response.data.data);
+            const response = await axios.get(`${REACT_APP_PATH2}/admin/api/FindDataEachYearById/${selectedYear}`);
+            const { id, Year } = response.data[0]; // Accessing the first item in the response array
+            const parsedData = {
+                id: id, // add the id property to the parsed data object
+                year: JSON.parse(Year), // parse the Year property for each item
+            };
+            setGroupData(parsedData.year.group);
             navigate(`/information/data/${selectedYear}`);
         } catch (error) {
             console.error(error);
@@ -62,10 +91,9 @@ export const DataOfYear = (className) => {
                                         <div className="col-3">
                                             <select
                                                 className="form-select "
-                                                value={Data.name_year}
+                                                value={selectedYear}
                                                 onChange={handleYearChange}
                                             >
-                                                <option>{Data.name_year}</option>
                                                 {Year ? (
                                                     Year.map((Year, index) => {
                                                         return <SelectYear key={index} data={Year} />;
@@ -86,7 +114,7 @@ export const DataOfYear = (className) => {
                                         <div className="d-flex flex-wrap">
                                             {Group_Data ? (
                                                 Group_Data.map((data, index) => {
-                                                    return <GroupData key={index} data={data} />;
+                                                    return <GroupData key={index} data={data} id_group={index} />;
                                                 })
                                             ) : (
                                                 <Spinner

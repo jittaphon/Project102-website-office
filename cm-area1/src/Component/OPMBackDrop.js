@@ -3,13 +3,13 @@ import "react-awesome-button/dist/styles.css";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
-const { REACT_APP_PATH } = process.env;
+const { REACT_APP_PATH2 } = process.env;
 
 export const OPMBackDrop = () => {
     const [Data, setData] = useState("");
     useEffect(() => {
         function get() {
-            axios.get(`${REACT_APP_PATH}/admin/api/FindPDF`).then((res) => {
+            axios.get(`${REACT_APP_PATH2}/admin/api/get_uploadOPM`).then((res) => {
                 setData(res.data);
             });
         }

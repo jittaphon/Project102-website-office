@@ -9,7 +9,7 @@ import { Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import Img4 from "../../assets/img/sorry.png";
-const { REACT_APP_PATH } = process.env;
+const { REACT_APP_PATH2 } = process.env;
 
 export const DataOfGroupOfData = (className) => {
     const { year } = useParams();
@@ -19,9 +19,10 @@ export const DataOfGroupOfData = (className) => {
 
     const fetchDataYear = async () => {
         try {
-            const response = await axios.get(`${REACT_APP_PATH}/admin/api/FindDataInGroupOfData/${year}/${group}`);
-            setData(response.data[0].date);
-            setDataName(response.data[0].name_data);
+            const response = await axios.get(`${REACT_APP_PATH2}/admin/api/GetDataNameOfGroup/${year}/${group}`);
+
+            setData(response.data.data.data);
+            setDataName(response.data.data.name_data);
         } catch (error) {
             console.error(error);
         }
@@ -30,8 +31,7 @@ export const DataOfGroupOfData = (className) => {
         fetchDataYear();
     }, []);
 
-
-   if (Array.isArray(Data) && Data.length === 0) {
+    if (Array.isArray(Data) && Data.length === 0) {
         return (
             <section className="banner-ArticlePage" id="home">
                 <Container>
@@ -53,7 +53,7 @@ export const DataOfGroupOfData = (className) => {
                                         </TrackVisibility>
                                         <Accordion>
                                             <h3>ขออภัย ยังไม่มีข้อมูล</h3>
-                                            <img src={Img4} alt="ICT" style={{ width: '200px', height: '200px' }}></img>
+                                            <img src={Img4} alt="ICT" style={{ width: "200px", height: "200px" }}></img>
                                         </Accordion>
                                     </div>
                                 </div>
@@ -83,6 +83,7 @@ export const DataOfGroupOfData = (className) => {
                                     <Accordion>
                                         {Data ? (
                                             Data.map((data, index) => {
+                                             
                                                 return <AccordionNameData1 data={data} key={uuidv4()} />;
                                             })
                                         ) : (

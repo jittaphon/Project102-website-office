@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/modern finance business logo.svg";
-
+import axios from "axios";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
-
+const { REACT_APP_PATH2 } = process.env;
 export const HomeBanner = () => {
+    const [banner, setBanner] = useState();
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
     const [text, setText] = useState("");
@@ -13,6 +14,14 @@ export const HomeBanner = () => {
     const [index, setIndex] = useState(1);
     const toRotate = ["DMC ", "CONFERENCE", "EMIS B-OBEC M-OBEC"];
     const period = 2000;
+    useEffect(() => {
+        async function get() {
+            axios.get(`${REACT_APP_PATH2}/admin/api/getOther`).then((res) => {
+                setBanner(res.data[1].array);
+            });
+        }
+        get();
+    }, []);
 
     useEffect(() => {
         let ticker = setInterval(() => {
@@ -57,9 +66,8 @@ export const HomeBanner = () => {
                         <TrackVisibility>
                             {({ isVisible }) => (
                                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                                    <span className="tagline">
-                                        กลุ่มส่งเสริมการศึกษาทางไกล เทคโนโลยีสารสนเทศและการสื่อสาร
-                                    </span>
+                                    {banner && <span className="tagline">{banner.Title}</span>}
+
                                     <h1>
                                         {`"Welcome to DLICT "`}{" "}
                                         <span
@@ -70,12 +78,7 @@ export const HomeBanner = () => {
                                             <span className="wrap">{text}</span>
                                         </span>
                                     </h1>
-                                    <p >
-                                    ศึกษา วิเคราะห์ ดำเนินการ และส่งเสริมการจัดการศึกษาทางไกล พัฒนาระบบข้อมูลสารสนเทศเพื่อการบริหารและการจัดการศึกษา
-                                    ดำเนินงานสารสนเทศเพื่อการบริหารและการจัดการศึกษา ดำเนินการวิเคราะห์ และปฏิบัติงานระบบคอมพิวเตอร์และเทคโนโลยีสารสนเทศและการสื่อสาร
-                                    ส่งเสริม สนับสนุน และดำเนินงานบริการเทคโนโลยีสารสนเทศ 
-                                    </p>
-                                    
+                                    {banner && <p>{banner.Description}</p>}
                                 </div>
                             )}
                         </TrackVisibility>

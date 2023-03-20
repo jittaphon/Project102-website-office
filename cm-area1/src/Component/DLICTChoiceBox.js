@@ -5,7 +5,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import colorSharp from "../assets/img/color-sharp.png";
 import TrackVisibility from "react-on-screen";
-const { REACT_APP_PATH } = process.env;
+const { REACT_APP_PATH2 } = process.env;
 export const ChoiceBox = () => {
     const [Data, setData] = useState();
     const [Title, setTitle] = useState();
@@ -13,7 +13,7 @@ export const ChoiceBox = () => {
 
     useEffect(() => {
         async function get() {
-            axios.get(`${REACT_APP_PATH}/admin/api/FindServiceByType/${type}`).then((res) => {
+            axios.get(`${REACT_APP_PATH2}/admin/api/FindServiceByType/${type}`).then((res) => {
                 setData(res.data);
             });
         }
@@ -21,7 +21,7 @@ export const ChoiceBox = () => {
     }, []);
     useEffect(() => {
         async function get() {
-            axios.get(`${REACT_APP_PATH}/admin/api/ServiceTitleFindByType/${type}`).then((res) => {
+            axios.get(`${REACT_APP_PATH2}/admin/api/ServiceTitleFindByType/${type}`).then((res) => {
                 setTitle(res.data);
             });
         }
@@ -98,7 +98,7 @@ export const ChoiceBox = () => {
                                                     >
                                                         <div className="item">
                                                             <a href={data.url} target="_blank" rel="noreferrer">
-                                                                <img src={data.image} alt="Image" />
+                                                                <img src={data.image} alt="ict" />
                                                             </a>
                                                         </div>
                                                     </div>

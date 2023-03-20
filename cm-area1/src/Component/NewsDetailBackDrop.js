@@ -4,19 +4,17 @@ import axios from "axios";
 import colorSharp from "../assets/img/color-sharp.png";
 import { Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-const { REACT_APP_PATH ,REACT_APP_PATHNEW} = process.env;
+const { REACT_APP_PATH2} = process.env;
 
 export const NewsDetailBackDrop = () => {
     const { id } = useParams();
     const [Data, setData] = useState([]);
-    const [TitleImage, setTitleImage] = useState();
     const [Image, setImage] = useState();
     useEffect(() => {
         async function get() {
-            axios.get(`${REACT_APP_PATHNEW}/admin/api/FindNewsById/${id}`).then((res) => {
-                setData(res.data);
-                setTitleImage(res.data.image_title_url[0]);
-                setImage(res.data.images[0]);
+            axios.get(`${REACT_APP_PATH2}/admin/api/FindNewsById/${id}`).then((res) => {
+                setData(res.data.content[0]);
+                setImage(res.data.images);
             });
         }
         get();
@@ -31,8 +29,8 @@ export const NewsDetailBackDrop = () => {
                     <div className="col-12">
                         <div className="NewsDetailBackDrop-bx wow zoomIn">
                             <div>
-                                <h2 className="data-h">{Data.Headline}</h2>
-                                <img className="imagedetailCover" src={TitleImage} alt="ict" />
+                                <h2 className="data-h">{Data.headline}</h2>
+                                <img className="imagedetailCover" src={Data.image_title_url} alt="ict" />
                                 <p className="data-content">{Data.content}</p>
                             </div>
                         </div>

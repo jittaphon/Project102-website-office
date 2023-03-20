@@ -6,7 +6,9 @@ const { REACT_APP_IMGEPATH } = process.env;
 
 export const AccordionNameData1 = (data, className) => {
 
+        console.log(data.data)
     return (
+        
         <Accordion.Item eventKey={uuidv4()}>
             <Accordion.Header>{data.data.name_date}</Accordion.Header>
             <Accordion.Body>
@@ -21,7 +23,7 @@ export const AccordionNameData1 = (data, className) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {data.data.data.map((x, index) => (
+                            {data.data.array_data.map((x, index) => (
                                 <tr>
                                     <td className="col-md-7">{x.name}</td>
                                     <td style={{ textAlign: "center" }}>

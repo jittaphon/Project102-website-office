@@ -11,9 +11,9 @@ export const BoxYear = (data, className) => {
                             <Link
                                 className="text-linkdata "
                                 style={{ textDecoration: "none", color: "black" }}
-                                to={`/information/data/${data.data._id}`}
+                                to={`/information/data/${data.data.id}`}
                             >
-                                <h1>{data.data.name_year}</h1>
+                                <h1>{data.data.year.name_year}</h1>
                             </Link>
                         </div>
                     </div>

@@ -5,7 +5,7 @@ import "react-multi-carousel/lib/styles.css";
 import colorSharp from "../assets/img/color-sharp.png";
 import { Spinner } from "react-bootstrap";
 import TrackVisibility from "react-on-screen";
-const { REACT_APP_PATH } = process.env;
+const { REACT_APP_PATH2 } = process.env;
 
 export const Skills = () => {
     const [Data, setData] = useState();
@@ -14,7 +14,7 @@ export const Skills = () => {
 
     useEffect(() => {
         async function get() {
-            axios.get(`${REACT_APP_PATH}/admin/api/FindServiceByType/${type}`).then((res) => {
+            axios.get(`${REACT_APP_PATH2}/admin/api/FindServiceByType/${type}`).then((res) => {
                 setData(res.data);
             });
         }
@@ -23,7 +23,7 @@ export const Skills = () => {
    
     useEffect(() => {
         async function get() {
-            axios.get(`${REACT_APP_PATH}/admin/api/ServiceTitleFindByType/${type}`).then((res) => {
+            axios.get(`${REACT_APP_PATH2}/admin/api/ServiceTitleFindByType/${type}`).then((res) => {
                 setTitle(res.data);
             });
         }

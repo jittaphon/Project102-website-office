@@ -9,7 +9,7 @@ export const GroupData = (data, className) => {
                 <Link
                     className="text-linkdata "
                     style={{ textDecoration: "none", color: "black" }}
-                    to={`/information/data/${year}/${data.data._id}/`}
+                    to={`/information/data/${year}/${data.id_group}`}
                 >
                     <div>
                         <img className="icon" src={data.data.icon} alt="ict" />
