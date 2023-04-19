@@ -41,7 +41,7 @@ export const BackDroup = () => {
                                 <TrackVisibility>
                                     {({ isVisible }) => (
                                         <div className={isVisible ? "animate__animated animate__fadeInDown" : ""}>
-                                            <h2>Big Data</h2>
+                                            <h2>ข้อมูลหน่วยงานในสังกัด</h2>
                                         </div>
                                     )}
                                 </TrackVisibility>
@@ -75,7 +75,7 @@ export const BackDroup = () => {
                             <TrackVisibility>
                                 {({ isVisible }) => (
                                     <div className={isVisible ? "animate__animated animate__fadeInDown" : ""}>
-                                        <h2>Big Data</h2>
+                                        <h2>ข้อมูลหน่วยงานในสังกัด</h2>
                                     </div>
                                 )}
                             </TrackVisibility>

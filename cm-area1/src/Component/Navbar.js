@@ -58,14 +58,26 @@ export const NavBar = () => {
                             ทําเนียบบุคลากร
                         </Nav.Link>
 
+
+                        <Nav.Link
+                            as={Link}
+                            to="/big-data/year/year"
+                            className={activeLink === "information" ? "active navbar-link" : "navbar-link"}
+                            onClick={() => onUpdateActiveLink("big-data")}
+                        >
+                            Big Data
+                        </Nav.Link>
+
                         <Nav.Link
                             as={Link}
                             to="/information/data"
                             className={activeLink === "information" ? "active navbar-link" : "navbar-link"}
                             onClick={() => onUpdateActiveLink("information")}
                         >
-                            Big Data
+                            หน่วยงานในสังกัด
                         </Nav.Link>
+                        
+                        
 
                         <Nav.Link
                             as={Link}

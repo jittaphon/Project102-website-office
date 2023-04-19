@@ -27,6 +27,8 @@ export const DataOfGroupOfData = (className) => {
             console.error(error);
         }
     };
+
+    console.log(Data)
     useEffect(() => {
         fetchDataYear();
     }, []);

@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "../Page/Home";
 import Data from "../Page/Data";
+import BigData from "../BigdataComponent/Data";
 import { DataOfYear } from "../Page/SubPage/DataOfYear";
 import { DataOfGroupOfData } from "../Page/SubPage/DataOfGroupOfData";
 import Profile from "../Page/Profile";
@@ -18,6 +19,9 @@ const AnimatedRoute = () => {
         <AnimatePresence>
             <Routes location={location} key={location.pathname}>
                 <Route path="/*" element={<Home />} />
+
+                <Route path="/big-data/year/:year" element={<BigData />} />
+
                 <Route path="/information/data" element={<Data />} />
                 <Route path="/information/data/:year" element={<DataOfYear />} />
                 <Route path="/information/data/:year/:group/" element={<DataOfGroupOfData />} />
