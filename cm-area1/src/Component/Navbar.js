@@ -74,7 +74,7 @@ export const NavBar = () => {
                             className={activeLink === "information" ? "active navbar-link" : "navbar-link"}
                             onClick={() => onUpdateActiveLink("information")}
                         >
-                            หน่วยงานในสังกัด
+                            ข้อมูลหน่วยงานในสังกัด
                         </Nav.Link>
                         
                         

@@ -13,7 +13,7 @@ export const GroupData = (data, className) => {
                 >
                     <div>
                         <img className="icon" src={data.data.icon} alt="ict" />
-                        <p style={{ fontSize: "15px", margin: "25px" }}>{data.data.name_data}</p>
+                        <p style={{ fontSize: "0.8rem", margin: "17px"}}>{data.data.name_data}</p>
                     </div>
                 </Link>
             </div>
